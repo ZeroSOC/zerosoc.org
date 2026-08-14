@@ -1,0 +1,69 @@
+/**
+ * ZeroSOC.org - Design Tokens
+ * Light Blueprint Glass Box Theme
+ * License: Apache-2.0
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap');
+
+:root {
+  /* Canvas & Grid */
+  --bg-paper: #f2f5fa;
+  --bg-paper-alt: #e9eef6;
+  --grid-line: rgba(46, 109, 180, 0.065);
+  --grid-size: 32px;
+
+  /* Typography Colors */
+  --ink-heading: #0f172a;
+  --ink-body: #334155;
+  --ink-muted: #64748b;
+  --ink-light: #94a3b8;
+  --ink-on-accent: #ffffff;
+
+  /* Accent & Status Colors */
+  --blue-primary: #2563eb;
+  --blue-hover: #1d4ed8;
+  --blue-soft: rgba(37, 99, 235, 0.08);
+  --blue-border: rgba(37, 99, 235, 0.25);
+  --blue-glow: rgba(37, 99, 235, 0.2);
+  
+  --orange-primary: #ea580c;
+  --orange-hover: #c2410c;
+  --orange-soft: rgba(234, 88, 12, 0.08);
+  --orange-border: rgba(234, 88, 12, 0.3);
+  --orange-glow: rgba(234, 88, 12, 0.2);
+
+  --green-accent: #16a34a;
+  --green-soft: rgba(22, 163, 74, 0.08);
+  --green-border: rgba(22, 163, 74, 0.25);
+
+  --purple-accent: #7c3aed;
+  --purple-soft: rgba(124, 58, 237, 0.08);
+  --purple-border: rgba(124, 58, 237, 0.25);
+
+  /* Glassmorphism Surfaces */
+  --glass-bg: rgba(255, 255, 255, 0.88);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.65);
+  --glass-bg-elevated: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(203, 213, 225, 0.85);
+  --glass-border-subtle: rgba(226, 232, 240, 0.7);
+  --glass-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  --glass-shadow-hover: 0 18px 36px -6px rgba(37, 99, 235, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1);
+
+  /* Typography Stacks */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Layout Constants */
+  --max-width: 1200px;
+  --header-height: 72px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
