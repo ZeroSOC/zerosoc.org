@@ -25,8 +25,10 @@ zerosoc.org/
 │   ├── pipeline-explorer.js     # Interactive state switcher for Lifecycle Phases & G1-G5 Gates
 │   └── main.js                  # Navigation scrolling, mobile menu, FAQ accordion logic
 ├── assets/
-│   ├── zerosoc-mark.svg         # Geometric open-standard vector mark
-│   └── favicon.svg              # Browser favicon
+│   ├── zerosoc_logo.png         # Official ZeroSOC brand logo
+│   ├── favicon.svg              # Vector SVG favicon
+│   ├── favicon.png              # PNG favicon (64x64)
+│   └── favicon.ico              # ICO fallback favicon
 └── README.md                    # This document
 ```
 
