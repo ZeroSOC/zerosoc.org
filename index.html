@@ -294,9 +294,11 @@
                 <span class="tag green">Apache-2.0</span>
               </div>
               <p class="workstream-desc">
-                Model Context Protocol (MCP) servers connecting AI agents directly to native security tools (Defender XDR,
+                Model Context Protocol (MCP) servers connecting AI agents directly to native security tools (Defender
+                XDR,
                 Sentinel, Google SecOps, CrowdStrike) at the source of truth—eliminating the cost and complexity of
-                copying telemetry into yet another centralized data lake or redundant pane of glass, with safe-by-default
+                copying telemetry into yet another centralized data lake or redundant pane of glass, with
+                safe-by-default
                 read/write isolation.
               </p>
             </div>
@@ -543,12 +545,10 @@
               <img src="assets/s_autonomy.png" alt="ZeroSOC Analyst Console: Operator Autonomy Controls" loading="lazy">
             </div>
             <div class="screenshot-info">
-              <h4>Operator Autonomy &amp; Action Reversibility</h4>
+              <h4>Operator Autonomy &amp; Guardrails</h4>
               <p>
-                Autonomy is calibrated through a policy-driven safety dial anchored on action reversibility.
-                Operators set confidence thresholds allowing automated containment for low-blast-radius reversible
-                actions (e.g., host isolation), while enforcing mandatory Human-in-the-Loop (HITL) approval gates
-                for high-impact or destructive operations.
+                Operators configure confidence thresholds and mandatory Human-in-the-Loop (HITL) approval gates per
+                incident category, ensuring containment actions stay strictly bounded within organizational policy.
               </p>
             </div>
           </div>
@@ -733,14 +733,13 @@
             <div class="faq-content">
               <div class="faq-body">
                 <p>
-                  <strong>Unconstrained autonomy is dangerous.</strong> That is why ZeroSOC governs containment through
-                  a policy-driven safety dial anchored on <strong>action reversibility</strong> and blast radius:
-                  low-risk reversible actions (such as host isolation) can be automated under strict confidence thresholds,
-                  while high-impact or destructive changes mandate Human-in-the-Loop (HITL) approval gates.
+                  <strong>Unconstrained autonomy is dangerous.</strong> That is why ZeroSOC mandates safe-by-default
+                  tool separation (read tools strictly isolated from write/response tools), explicit autonomy sliders,
+                  and mandatory Human-in-the-Loop (HITL) approval gates for any destructive action.
                 </p>
                 <p>
-                  Safe-by-default tool separation (read tools strictly isolated from write tools) and transparent reasoning
-                  logs ensure that teams maintain total control and auditability over their environment at all times.
+                  Transparent reasoning logs and case-attributed audit trails ensure that teams maintain complete
+                  governance over their blast radius.
                 </p>
               </div>
             </div>
