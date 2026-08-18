@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="100%" height="100%">
+    <defs>
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#020617"/>
+            <stop offset="50%" stop-color="#0f172a"/>
+            <stop offset="100%" stop-color="#1e293b"/>
+        </linearGradient>
+        
+        <linearGradient id="govGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#4c1d95"/>
+            <stop offset="100%" stop-color="#7c3aed"/>
+        </linearGradient>
+        <linearGradient id="procGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#1e3a8a"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+        </linearGradient>
+        <linearGradient id="taxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#0f766e"/>
+            <stop offset="100%" stop-color="#14b8a6"/>
+        </linearGradient>
+        <linearGradient id="metGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#9a3412"/>
+            <stop offset="100%" stop-color="#f59e0b"/>
+        </linearGradient>
+        <linearGradient id="delGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#86198f"/>
+            <stop offset="100%" stop-color="#d946ef"/>
+        </linearGradient>
+        <linearGradient id="fndGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#334155"/>
+            <stop offset="100%" stop-color="#475569"/>
+        </linearGradient>
+
+        <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+            <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+        </filter>
+        
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+        </marker>
+    </defs>
+
+    <style>
+        .title { font-family: 'Inter', -apple-system, sans-serif; font-size: 42px; font-weight: 800; fill: #f8fafc; letter-spacing: 0.5px; }
+        .subtitle { font-family: 'Inter', -apple-system, sans-serif; font-size: 20px; font-weight: 400; fill: #94a3b8; }
+        .box-title { font-family: 'Inter', -apple-system, sans-serif; font-size: 22px; font-weight: 700; fill: #ffffff; }
+        .box-text { font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; font-weight: 400; fill: #e2e8f0; }
+        .small-text { font-family: 'Inter', -apple-system, sans-serif; font-size: 13px; font-weight: 400; fill: #cbd5e1; }
+        .arrow { stroke: #64748b; stroke-width: 3; fill: none; }
+        .dashed { stroke-dasharray: 6 4; }
+    </style>
+
+    <!-- Background -->
+    <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+
+    <!-- Header -->
+    <text x="600" y="70" text-anchor="middle" class="title">ZeroSOC Framework</text>
+    <text x="600" y="105" text-anchor="middle" class="subtitle">Standardizing Autonomous &amp; Human Security Operations</text>
+
+    <!-- Arrows -->
+    <!-- Taxonomy to Processes -->
+    <path d="M 280 295 L 315 295" class="arrow" marker-end="url(#arrowhead)"/>
+    <!-- Governance to Processes -->
+    <path d="M 600 240 L 600 255" class="arrow" marker-end="url(#arrowhead)"/>
+    <!-- Processes to Metrics -->
+    <path d="M 880 295 L 915 295" class="arrow" marker-end="url(#arrowhead)"/>
+    
+    <!-- Processes and Playbooks double link -->
+    <path d="M 540 350 L 540 375" class="arrow" marker-end="url(#arrowhead)"/>
+    <path d="M 660 380 L 660 355" class="arrow" marker-end="url(#arrowhead)"/>
+    
+    <!-- Playbooks to Deliverables -->
+    <path d="M 880 435 L 915 435" class="arrow" marker-end="url(#arrowhead)"/>
+    <!-- Foundation to rest -->
+    <path d="M 600 540 L 600 495" class="arrow dashed" marker-end="url(#arrowhead)"/>
+
+    <!-- 07 Governance -->
+    <g transform="translate(200, 150)">
+        <rect width="800" height="90" rx="16" fill="url(#govGrad)" filter="url(#shadow)"/>
+        <text x="400" y="40" text-anchor="middle" class="box-title">07 - Governance</text>
+        <text x="400" y="70" text-anchor="middle" class="box-text">Ensures safe, bounded execution via JIT Scoping, Least-Privilege, and Human-in-the-Loop Supervision.</text>
+    </g>
+
+    <!-- 02 Taxonomy -->
+    <g transform="translate(60, 260)">
+        <rect width="220" height="230" rx="16" fill="url(#taxGrad)" filter="url(#shadow)"/>
+        <text x="110" y="45" text-anchor="middle" class="box-title">02 - Taxonomy</text>
+        <text x="110" y="80" text-anchor="middle" class="box-text">Classification Schema</text>
+        <text x="110" y="125" text-anchor="middle" class="small-text">• Alert Types (Domain)</text>
+        <text x="110" y="155" text-anchor="middle" class="small-text">• Incident Categories (IC)</text>
+        <text x="110" y="185" text-anchor="middle" class="small-text">• MITRE ATT&amp;CK Mappings</text>
+    </g>
+
+    <!-- 03 Processes -->
+    <g transform="translate(320, 260)">
+        <rect width="560" height="90" rx="16" fill="url(#procGrad)" filter="url(#shadow)"/>
+        <text x="280" y="40" text-anchor="middle" class="box-title">03 - Processes</text>
+        <text x="280" y="70" text-anchor="middle" class="box-text">Operational Pipeline: Prep → Detection &amp; Analysis → Response → Post-Incident</text>
+    </g>
+
+    <!-- 04 Playbooks -->
+    <g transform="translate(320, 380)">
+        <rect width="560" height="110" rx="16" fill="#0369a1" filter="url(#shadow)"/>
+        <text x="280" y="40" text-anchor="middle" class="box-title">04 - Playbooks</text>
+        <text x="280" y="70" text-anchor="middle" class="box-text">Executable Logic (Executor-Neutral): Domain Triage &amp; Incident Investigation</text>
+        <text x="280" y="95" text-anchor="middle" class="small-text">Drives Concurrent A/B Hypothesis Testing (Malicious vs. Benign)</text>
+    </g>
+
+    <!-- 05 Metrics -->
+    <g transform="translate(920, 260)">
+        <rect width="220" height="100" rx="16" fill="url(#metGrad)" filter="url(#shadow)"/>
+        <text x="110" y="40" text-anchor="middle" class="box-title">05 - Metrics</text>
+        <text x="110" y="70" text-anchor="middle" class="small-text">Mathematical precision for</text>
+        <text x="110" y="90" text-anchor="middle" class="small-text">Speed, Accuracy &amp; Token Econ</text>
+    </g>
+
+    <!-- 06 Deliverables -->
+    <g transform="translate(920, 390)">
+        <rect width="220" height="100" rx="16" fill="url(#delGrad)" filter="url(#shadow)"/>
+        <text x="110" y="40" text-anchor="middle" class="box-title">06 - Deliverables</text>
+        <text x="110" y="70" text-anchor="middle" class="small-text">Auditable Output / Provenance:</text>
+        <text x="110" y="90" text-anchor="middle" class="small-text">Triage &amp; Investigation Notes</text>
+    </g>
+
+    <!-- 01 Foundation -->
+    <g transform="translate(200, 540)">
+        <rect width="800" height="100" rx="16" fill="url(#fndGrad)" filter="url(#shadow)"/>
+        <text x="400" y="40" text-anchor="middle" class="box-title">01 - Foundation</text>
+        <text x="400" y="70" text-anchor="middle" class="box-text">Strategic Manifest, OCSF-aligned SOC Glossary, Design Decisions &amp; Roadmap</text>
+        <text x="400" y="90" text-anchor="middle" class="small-text">"You can outsource thinking, but you cannot outsource understanding"</text>
+    </g>
+
+</svg>
