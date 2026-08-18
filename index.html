@@ -4,15 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ZeroSOC.org — Open Autonomous SecOps</title>
+  <title>ZeroSOC.org — Open Autonomous SecOps Initiative</title>
   <meta name="description"
-    content="An open, vendor-independent framework standardizing how human analysts, deterministic automation, and AI agents collaborate across modern security operations.">
+    content="An open, vendor-independent ecosystem standardizing autonomous security operations across specifications, agent skills, MCP tool servers, runtime platform, and cyber range.">
 
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ZeroSOC.org — Open Autonomous SecOps">
+  <meta property="og:title" content="ZeroSOC.org — Open Autonomous SecOps Initiative">
   <meta property="og:description"
-    content="An open, vendor-independent framework standardizing taxonomy, playbooks, performance metrics, and governance for modern SecOps.">
+    content="Democratizing autonomous defense for every security team through open specifications, agent skills, MCP integrations, runtime platform, and empirical benchmarks.">
   <meta property="og:url" content="https://zerosoc.org">
 
   <!-- Favicon -->
@@ -30,7 +30,7 @@
 
   <!-- Blueprint Registration Frame & Stamp -->
   <div class="blueprint-frame" aria-hidden="true"></div>
-  <div class="dwg-stamp" aria-hidden="true">DOC: SPEC-001 | OPEN WORKING DRAFT | APACHE-2.0</div>
+  <div class="dwg-stamp" aria-hidden="true">DOC: ZEROSOC-ECOSYSTEM-SPEC | OPEN WORKING DRAFT | APACHE-2.0 & AGPLv3</div>
 
   <!-- 1. HUD Navigation Header -->
   <header class="hud-header">
@@ -42,10 +42,11 @@
 
       <nav aria-label="Main Navigation">
         <ul class="nav-links">
-          <li><a href="#manifesto" class="nav-link">Manifesto</a></li>
-          <li><a href="#lifecycle" class="nav-link">Lifecycle & Gates</a></li>
-          <li><a href="#ecosystem" class="nav-link">Repositories</a></li>
-          <li><a href="#adoption" class="nav-link">Adoption</a></li>
+          <li><a href="#mission" class="nav-link">Mission &amp; Philosophy</a></li>
+          <li><a href="#ecosystem" class="nav-link">Ecosystem Architecture</a></li>
+          <li><a href="#framework" class="nav-link">Framework</a></li>
+          <li><a href="#platform" class="nav-link">Platform</a></li>
+          <li><a href="#cta" class="nav-link">Community CTA</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
       </nav>
@@ -69,35 +70,39 @@
   </header>
 
   <main>
-    <!-- 2. Hero Section -->
-    <section class="hero">
+    <!-- 2. Hero & Mission Section -->
+    <section id="mission" class="hero">
       <div class="container">
         <div class="hero-content">
-          <div class="kicker">Open Specification · Vendor-Neutral</div>
-          <h1 class="hero-title">Building the Foundation for Autonomous SecOps, Together</h1>
+          <div class="kicker">Open Autonomous SecOps Initiative · Vendor-Independent</div>
+          <h1 class="hero-title">Democratizing Autonomous Defense for Every Security Team</h1>
           <p class="hero-subtitle">
-            ZeroSOC is an open, community-driven framework standardizing how human analysts, deterministic automation,
-            and AI agents collaborate on detection, investigation, and incident response.
+            Traditional SecOps operates at human speed against AI-enabled adversaries attacking at machine speed.
+            Proprietary AI SOCs cost fortunes and hide inside black boxes. ZeroSOC is the open ecosystem standardizing
+            autonomous security operations—transparent, auditable, and accessible to all.
           </p>
 
           <div class="hero-actions">
-            <a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/01-Foundation/framework_manifest.md"
-              target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-              <span>Read the Manifest on GitHub</span>
+            <a href="#ecosystem" class="btn btn-primary">
+              <span>Explore Ecosystem</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
-            <a href="#ecosystem" class="btn btn-secondary">Explore Repositories</a>
-            <a href="#faq" class="btn btn-outline">Practitioner FAQ</a>
+            <a href="https://github.com/ZeroSOC/zerosoc-framework" target="_blank" rel="noopener noreferrer"
+              class="btn btn-secondary">
+              Read Framework Specs
+            </a>
+            <a href="#cta" class="btn btn-outline">Join September Kickoff</a>
           </div>
 
           <div class="hero-meta-tags">
-            <span class="tag blue">Executor-Neutral</span>
-            <span class="tag">OCSF v1.8 Aligned</span>
+            <span class="tag blue">Democratizing Defense</span>
+            <span class="tag">Executor-Neutral</span>
+            <span class="tag">OCSF-Aligned</span>
             <span class="tag">Glass-Box Auditable</span>
-            <span class="tag green">Apache-2.0 License</span>
+            <span class="tag green">Community Governed</span>
           </div>
 
           <!-- Working Draft Practitioner Callout -->
@@ -111,9 +116,49 @@
             <div class="draft-text">
               <h4>An Open Working Draft for Practitioners</h4>
               <p>
-                No single team or vendor has all the answers for autonomous security operations. The current release is an
-                open working draft (v0.x) designed to start structured, peer-reviewed conversations across the SecOps
-                community. We invite you to read, critique, and co-develop the specifications.
+                No single team or vendor has all the answers for autonomous security operations. The ZeroSOC project is an
+                open working draft (v0.x) uniting specifications, agent reasoning skills, MCP tool servers, and runtime
+                harnesses under transparent community governance. We invite practitioners and security leaders to critique,
+                test, and co-develop with us.
+              </p>
+            </div>
+          </div>
+
+          <!-- The 4 Strategic Pillars (Why We Build in the Open) -->
+          <div class="whys-grid">
+            <div class="whys-card">
+              <div class="whys-kicker">Pillar 01 · The Threat</div>
+              <h3>Machine-Speed Threats</h3>
+              <p>
+                Adversaries weaponize AI for automated reconnaissance, dynamic polymorphism, and sub-hour breakout times.
+                Traditional manual triage operating at human speed cannot match the velocity of machine-speed attacks.
+              </p>
+            </div>
+
+            <div class="whys-card highlight">
+              <div class="whys-kicker">Pillar 02 · Accessibility</div>
+              <h3>Breaking the Cost Barrier</h3>
+              <p>
+                Commercial "AI SOC" vendors package closed wrappers with luxury enterprise price tags. ZeroSOC democratizes
+                autonomous defense so healthcare, public sectors, and mid-market teams are not left behind.
+              </p>
+            </div>
+
+            <div class="whys-card">
+              <div class="whys-kicker">Pillar 03 · Discipline</div>
+              <h3>Framework First</h3>
+              <p>
+                <em>Structure precedes autonomy.</em> Handing LLMs raw API keys without normalized taxonomy, explicit schema
+                contracts, and normative playbooks creates chaotic hallucinations. Karpathy's Law and G1–G5 gates keep operations grounded.
+              </p>
+            </div>
+
+            <div class="whys-card">
+              <div class="whys-kicker">Pillar 04 · Trust</div>
+              <h3>Glass-Box Transparency</h3>
+              <p>
+                Security cannot rely on opaque prompt silos. ZeroSOC enforces open code, inspectable multi-hypothesis
+                reasoning traces (A/B testing), strict Human-in-the-Loop approval gates, and complete vendor neutrality.
               </p>
             </div>
           </div>
@@ -121,19 +166,208 @@
       </div>
     </section>
 
-    <!-- 3. Core Principles / Manifesto -->
-    <section id="manifesto" class="manifesto-section">
+    <!-- 3. Ecosystem Architecture ("How They Fit Together") -->
+    <section id="ecosystem" class="ecosystem-section">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">Core Principles</div>
-          <h2>Grounding Autonomous Operations</h2>
+          <div class="kicker">Architecture &amp; Workstreams</div>
+          <h2>How the ZeroSOC Ecosystem Fits Together</h2>
           <p>
-            The ZeroSOC Framework defines an authoritative, mathematically precise operational plane without vendor
-            lock-in.
+            The ZeroSOC initiative is organized into five focused open workstreams that connect specifications,
+            agent reasoning, native security tools, runtime execution, and continuous empirical validation into a cohesive loop.
           </p>
         </div>
 
-        <div class="grid-3">
+        <!-- Visual Flow Bar -->
+        <div class="ecosystem-flow-container">
+          <div class="ecosystem-flow-title">The Autonomous SecOps Operational Loop</div>
+          <div class="ecosystem-flow-bar">
+            <div class="flow-step-node">
+              <div class="flow-step-num">01 · Specs</div>
+              <div class="flow-step-name">Framework</div>
+              <div class="flow-step-role">Taxonomy &amp; Playbooks</div>
+            </div>
+            <div class="flow-step-arrow">→</div>
+            <div class="flow-step-node">
+              <div class="flow-step-num">02 · Reasoning</div>
+              <div class="flow-step-name">Agent Skills</div>
+              <div class="flow-step-role">Cognitive Routines</div>
+            </div>
+            <div class="flow-step-arrow">→</div>
+            <div class="flow-step-node">
+              <div class="flow-step-num">03 · Tooling</div>
+              <div class="flow-step-name">MCP Servers</div>
+              <div class="flow-step-role">Direct Native APIs</div>
+            </div>
+            <div class="flow-step-arrow">→</div>
+            <div class="flow-step-node">
+              <div class="flow-step-num">04 · Runtime</div>
+              <div class="flow-step-name">Platform</div>
+              <div class="flow-step-role">Execution &amp; UI Console</div>
+            </div>
+            <div class="flow-step-arrow">⇄</div>
+            <div class="flow-step-node">
+              <div class="flow-step-num">05 · Eval</div>
+              <div class="flow-step-name">Cyber Range</div>
+              <div class="flow-step-role">Adversary Benchmark</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 Workstream Cards Grid -->
+        <div class="ecosystem-workstreams-grid">
+          <!-- Workstream 1: zerosoc-framework -->
+          <a href="https://github.com/ZeroSOC/zerosoc-framework" target="_blank" rel="noopener noreferrer"
+            class="workstream-card">
+            <div>
+              <div class="workstream-card-header">
+                <div class="workstream-title-group">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                  </svg>
+                  <span class="workstream-title">zerosoc-framework</span>
+                </div>
+                <span class="tag green">Apache-2.0</span>
+              </div>
+              <p class="workstream-desc">
+                The implementation-independent specification layer. Defines OCSF-aligned taxonomy, executor-neutral
+                Markdown playbooks (Domain Triage &amp; Incident Category investigations), G1–G5 gates, and governance in Markdown.
+              </p>
+            </div>
+            <div class="workstream-footer">
+              <span class="tag">Specifications</span>
+              <span class="repo-action-icon">GitHub →</span>
+            </div>
+          </a>
+
+          <!-- Workstream 2: Agent Skills -->
+          <a href="https://github.com/ZeroSOC/zerosoc-platform/tree/main/.claude/skills" target="_blank" rel="noopener noreferrer"
+            class="workstream-card">
+            <div>
+              <div class="workstream-card-header">
+                <div class="workstream-title-group">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                  </svg>
+                  <span class="workstream-title">zerosoc-skills</span>
+                </div>
+                <span class="tag green">Apache-2.0</span>
+              </div>
+              <p class="workstream-desc">
+                Thin, reusable agentic reasoning routines enabling AI coding assistants (Claude Code, Cursor) and custom agent
+                harnesses to execute framework playbooks and enforce OCSF handoff contracts.
+              </p>
+            </div>
+            <div class="workstream-footer">
+              <span class="tag">Agent Skills</span>
+              <span class="repo-action-icon">GitHub →</span>
+            </div>
+          </a>
+
+          <!-- Workstream 3: zerosoc-mcp -->
+          <a href="https://github.com/ZeroSOC/zerosoc-mcp" target="_blank" rel="noopener noreferrer"
+            class="workstream-card">
+            <div>
+              <div class="workstream-card-header">
+                <div class="workstream-title-group">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <path d="M16 16v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1" />
+                    <path d="M18 8h4v8h-4" />
+                    <path d="M10 12h8" />
+                  </svg>
+                  <span class="workstream-title">zerosoc-mcp</span>
+                </div>
+                <span class="tag green">Apache-2.0</span>
+              </div>
+              <p class="workstream-desc">
+                Model Context Protocol (MCP) servers connecting AI agents directly to security tools (Defender XDR, Sentinel, Google SecOps, CrowdStrike) at the source of truth, complementing and extending missing vendor functionality with safe-by-default read/write isolation.
+              </p>
+            </div>
+            <div class="workstream-footer">
+              <span class="tag">Integrations</span>
+              <span class="repo-action-icon">GitHub →</span>
+            </div>
+          </a>
+
+          <!-- Workstream 4: zerosoc-platform -->
+          <a href="https://github.com/ZeroSOC/zerosoc-platform" target="_blank" rel="noopener noreferrer"
+            class="workstream-card">
+            <div>
+              <div class="workstream-card-header">
+                <div class="workstream-title-group">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                    <line x1="8" y1="21" x2="16" y2="21" />
+                    <line x1="12" y1="17" x2="12" y2="21" />
+                  </svg>
+                  <span class="workstream-title">zerosoc-platform</span>
+                </div>
+                <span class="tag tag-agpl">AGPLv3</span>
+              </div>
+              <p class="workstream-desc">
+                The open reference implementation and local execution engine. Features the Multi-Agent System (MAS personas), local execution sandboxes, and an analyst web console for glass-box reasoning visibility and operator control.
+              </p>
+            </div>
+            <div class="workstream-footer">
+              <span class="tag">Runtime &amp; UI</span>
+              <span class="repo-action-icon">GitHub →</span>
+            </div>
+          </a>
+
+          <!-- Workstream 5: zerosoc-cyber-range -->
+          <a href="https://github.com/ZeroSOC/zerosoc-cyber-range" target="_blank" rel="noopener noreferrer"
+            class="workstream-card">
+            <div>
+              <div class="workstream-card-header">
+                <div class="workstream-title-group">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24" />
+                  </svg>
+                  <span class="workstream-title">zerosoc-cyber-range</span>
+                </div>
+                <span class="tag green">Apache-2.0</span>
+              </div>
+              <p class="workstream-desc">
+                Real cloud infrastructure provisioned via IaC (OpenTofu + Ansible) driving realistic adversary emulations (MITRE Caldera, Atomic Red Team) against real endpoints, scored against ground truth by an independent evaluation model.
+              </p>
+            </div>
+            <div class="workstream-footer">
+              <span class="tag">Testbed &amp; Benchmarks</span>
+              <span class="repo-action-icon">GitHub →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Framework Deep-Dive (Visual Infographic & Interactive Explorer) -->
+    <section id="framework" class="framework-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="kicker">Normative Standard</div>
+          <h2>The ZeroSOC Framework Architecture</h2>
+          <p>
+            The Framework provides the foundational body of knowledge structured into seven core modules and an auditable,
+            4-phase operational lifecycle.
+          </p>
+        </div>
+
+        <!-- Embedded Framework SVG Infographic -->
+        <div class="infographic-wrapper">
+          <img src="assets/zerosoc_infographic.svg" alt="ZeroSOC Framework Infographic showing 7 core modules"
+            class="infographic-img" loading="lazy">
+          <div class="infographic-caption">Figure 1. ZeroSOC Framework Architecture — 7 Core Modules &amp; Operational Interconnections</div>
+        </div>
+
+        <!-- 3 Core Principles -->
+        <div class="grid-3" style="margin-bottom: 3.5rem;">
           <div class="glass-card card-blue-top">
             <div class="kicker" style="font-size:0.68rem; margin-bottom:0.75rem;">Principle 01</div>
             <h3>Aspirational North Star, Pragmatic Reality</h3>
@@ -145,13 +379,11 @@
           </div>
 
           <div class="glass-card highlight">
-            <div class="kicker orange" style="font-size:0.68rem; margin-bottom:0.75rem;">Principle 02 · Karpathy's Law
-            </div>
-            <h3>Executor Neutrality & Human Readability</h3>
+            <div class="kicker orange" style="font-size:0.68rem; margin-bottom:0.75rem;">Principle 02 · Karpathy's Law</div>
+            <h3>Executor Neutrality &amp; Human Readability</h3>
             <p>
               <em>"You can outsource thinking, but you cannot outsource understanding."</em> Processes are independent
-              of executor type—a human, script, or AI agent follows the exact same normative steps. Playbooks remain
-              clean Markdown so humans retain full auditability and governance.
+              of executor type—a human, script, or AI agent follows the exact same normative steps in clean Markdown.
             </p>
           </div>
 
@@ -160,23 +392,18 @@
             <h3>Closed-Loop Continuous Feedback</h3>
             <p>
               Triage false-positives and post-incident root cause analyses feed directly back into detection engineering
-              baselines and playbook updates, systematically eliminating alert rot and maintaining high-fidelity
-              signals.
+              baselines and playbook updates, systematically eliminating alert rot.
             </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- 4. Interactive Lifecycle & Measurement Gates -->
-    <section id="lifecycle" class="lifecycle-section">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Detection & Response Lifecycle</div>
-          <h2>The 4 Phases & 5 Measurement Gates</h2>
+        <!-- Interactive Lifecycle & Measurement Gates -->
+        <div class="section-header" style="margin-top: 2rem;">
+          <div class="kicker">Detection &amp; Response Lifecycle</div>
+          <h3>The 4 Phases &amp; 5 Measurement Gates</h3>
           <p>
-            ZeroSOC anchors every operational metric to mathematically verifiable state transitions on OCSF v1.8 schema
-            objects. Click any phase below to inspect its I/O contracts.
+            ZeroSOC anchors every operational metric to verifiable state transitions on OCSF schema objects.
+            Click any phase below to inspect its I/O contracts.
           </p>
         </div>
 
@@ -185,13 +412,13 @@
           <div class="pipeline-diagram" role="tablist" aria-label="ZeroSOC Lifecycle Phases">
             <div class="pipeline-node" data-phase="phase1" role="tab" tabindex="0" aria-selected="false">
               <span class="node-phase-tag">Phase 1</span>
-              <div class="node-title">Preparation & Engineering</div>
+              <div class="node-title">Preparation &amp; Engineering</div>
               <div class="gate-badge">G1 · Alert Raised</div>
             </div>
 
             <div class="pipeline-node active" data-phase="phase2" role="tab" tabindex="0" aria-selected="true">
               <span class="node-phase-tag">Phase 2</span>
-              <div class="node-title">Detection & Analysis</div>
+              <div class="node-title">Detection &amp; Analysis</div>
               <div class="gate-badge">G2 · Triage / G3 · Verdict</div>
             </div>
 
@@ -204,7 +431,7 @@
             <div class="pipeline-node" data-phase="phase4" role="tab" tabindex="0" aria-selected="false">
               <span class="node-phase-tag">Phase 4</span>
               <div class="node-title">Post-Incident Activity</div>
-              <div class="gate-badge">G5 · Review & Tuning</div>
+              <div class="gate-badge">G5 · Review &amp; Tuning</div>
             </div>
           </div>
 
@@ -212,23 +439,21 @@
           <div class="pipeline-inspector" id="pipeline-inspector" aria-live="polite">
             <div class="inspector-header">
               <div class="inspector-title-group">
-                <span class="kicker" id="inspector-phase-tag" style="margin-bottom:0.3rem;">Phase 2 · Detection &
-                  Analysis</span>
-                <h3 id="inspector-phase-title">Triage & Investigation</h3>
+                <span class="kicker" id="inspector-phase-tag" style="margin-bottom:0.3rem;">Phase 2 · Detection &amp; Analysis</span>
+                <h3 id="inspector-phase-title">Triage &amp; Investigation</h3>
               </div>
               <div class="tag orange" id="inspector-gate-badge">
-                <strong>G2 & G3 — Triage Decision & Verdict</strong>: OCSF 2005
+                <strong>G2 &amp; G3 — Triage Decision &amp; Verdict</strong>: OCSF 2005
               </div>
             </div>
 
             <div class="inspector-grid">
               <div class="inspector-block">
-                <h5>Objective & Roles</h5>
+                <h5>Objective &amp; Roles</h5>
                 <p id="inspector-objective" style="margin-bottom:0.75rem;">Fast alert aggregation into Cases,
                   domain-specific triage, and concurrent A/B hypothesis testing.</p>
                 <div style="font-family:var(--font-mono); font-size:0.78rem; color:var(--ink-muted);">
-                  <strong>Primary Actors:</strong> <span id="inspector-roles">Incident Investigator, Threat Hunter, AI
-                    Orchestrator</span>
+                  <strong>Primary Actors:</strong> <span id="inspector-roles">Incident Investigator, Threat Hunter, AI Orchestrator</span>
                 </div>
               </div>
 
@@ -246,7 +471,7 @@
                 <ul id="inspector-produces">
                   <li>G2: Closed Case OR Promotion to Investigation</li>
                   <li>G3: Confirmed Incident + Category (IC-##)</li>
-                  <li>Triage Note & Investigation Note</li>
+                  <li>Triage Note &amp; Investigation Note</li>
                 </ul>
               </div>
             </div>
@@ -262,205 +487,110 @@
       </div>
     </section>
 
-    <!-- 5. Open Repositories Matrix -->
-    <section id="ecosystem" class="ecosystem-section">
+    <!-- 5. Community Platform & UI Showcase -->
+    <section id="platform" class="platform-section">
       <div class="container">
         <div class="section-header">
-          <div class="kicker">The Open Ecosystem</div>
-          <h2>Open Source Repositories</h2>
+          <div class="kicker">Reference Runtime &amp; UI Console</div>
+          <h2>The ZeroSOC Platform</h2>
           <p>
-            The ZeroSOC initiative is split across focused open repositories hosted under the
-            <code>github.com/ZeroSOC</code> organization.
+            An open-source execution engine and analyst console designed for glass-box reasoning visibility,
+            local perimeter execution, and strict human-in-the-loop control.
           </p>
         </div>
 
-        <div class="grid-2">
-          <!-- Repo 1: zerosoc-framework -->
-          <a href="https://github.com/ZeroSOC/zerosoc-framework" target="_blank" rel="noopener noreferrer"
-            class="repo-card">
-            <div>
-              <div class="repo-header">
-                <div class="repo-name">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    aria-hidden="true">
-                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-                  </svg>
-                  <span>zerosoc-framework</span>
-                </div>
-                <span class="tag green">Apache-2.0</span>
-              </div>
-              <p class="repo-desc">
-                The authoritative body of knowledge defining taxonomy, playbooks (Triage & Investigation), deliverables
-                schemas, and performance metrics in Markdown.
+        <div class="screenshot-grid">
+          <!-- Screenshot 1: Case Trace -->
+          <div class="screenshot-card">
+            <div class="screenshot-img-frame">
+              <img src="assets/s_case_trace.png" alt="ZeroSOC Analyst Console: Glass-Box Investigation Trace"
+                loading="lazy">
+            </div>
+            <div class="screenshot-info">
+              <h4>Glass-Box Investigation Tracing</h4>
+              <p>
+                Every query, LLM reasoning step, and concurrent A/B hypothesis evaluation (Malicious vs. Benign)
+                is recorded in a transparent, inspectable timeline for full auditability and regulatory compliance.
               </p>
             </div>
-            <div class="repo-footer">
-              <div class="repo-tags">
-                <span class="tag">Specifications</span>
-                <span class="tag">OCSF v1.8</span>
-                <span class="tag">Playbooks</span>
-              </div>
-              <span class="repo-action-icon">→</span>
-            </div>
-          </a>
+          </div>
 
-          <!-- Repo 2: zerosoc-platform -->
-          <a href="https://github.com/ZeroSOC/zerosoc-platform" target="_blank" rel="noopener noreferrer"
-            class="repo-card">
-            <div>
-              <div class="repo-header">
-                <div class="repo-name">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    aria-hidden="true">
-                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                    <line x1="8" y1="21" x2="16" y2="21" />
-                    <line x1="12" y1="17" x2="12" y2="21" />
-                  </svg>
-                  <span>zerosoc-platform</span>
-                </div>
-                <span class="tag green">Open Source</span>
-              </div>
-              <p class="repo-desc">
-                The reference open runtime harness and execution engine for autonomous SecOps agents, featuring local
-                execution sandboxes and transparent audit logging.
+          <!-- Screenshot 2: Autonomy Slider -->
+          <div class="screenshot-card">
+            <div class="screenshot-img-frame">
+              <img src="assets/s_autonomy.png" alt="ZeroSOC Analyst Console: Operator Autonomy Controls"
+                loading="lazy">
+            </div>
+            <div class="screenshot-info">
+              <h4>Operator Autonomy &amp; Guardrails</h4>
+              <p>
+                Operators configure confidence thresholds and mandatory Human-in-the-Loop (HITL) approval gates per
+                incident category, ensuring containment actions stay strictly bounded within organizational policy.
               </p>
             </div>
-            <div class="repo-footer">
-              <div class="repo-tags">
-                <span class="tag">Runtime</span>
-                <span class="tag">Agent Harness</span>
-                <span class="tag">Auditability</span>
-              </div>
-              <span class="repo-action-icon">→</span>
-            </div>
-          </a>
-
-          <!-- Repo 3: zerosoc-cyber-range -->
-          <a href="https://github.com/ZeroSOC/zerosoc-cyber-range" target="_blank" rel="noopener noreferrer"
-            class="repo-card">
-            <div>
-              <div class="repo-header">
-                <div class="repo-name">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    aria-hidden="true">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24" />
-                  </svg>
-                  <span>zerosoc-cyber-range</span>
-                </div>
-                <span class="tag green">Apache-2.0</span>
-              </div>
-              <p class="repo-desc">
-                Deterministic attack replay scenarios, synthetic telemetry generation, and benchmark evaluation suites
-                for testing and scoring SecOps agent reasoning.
-              </p>
-            </div>
-            <div class="repo-footer">
-              <div class="repo-tags">
-                <span class="tag">Attack Replay</span>
-                <span class="tag">Benchmarks</span>
-                <span class="tag">Scoring</span>
-              </div>
-              <span class="repo-action-icon">→</span>
-            </div>
-          </a>
-
-          <!-- Repo 4: zerosoc-mcp -->
-          <a href="https://github.com/ZeroSOC/zerosoc-mcp" target="_blank" rel="noopener noreferrer" class="repo-card">
-            <div>
-              <div class="repo-header">
-                <div class="repo-name">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    aria-hidden="true">
-                    <path d="M16 16v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1" />
-                    <path d="M18 8h4v8h-4" />
-                    <path d="M10 12h8" />
-                  </svg>
-                  <span>zerosoc-mcp</span>
-                </div>
-                <span class="tag green">Apache-2.0</span>
-              </div>
-              <p class="repo-desc">
-                Model Context Protocol (MCP) servers and standardized tool definitions connecting AI agents safely to
-                SIEM, EDR, Identity, and Cloud APIs.
-              </p>
-            </div>
-            <div class="repo-footer">
-              <div class="repo-tags">
-                <span class="tag">MCP</span>
-                <span class="tag">Tooling</span>
-                <span class="tag">Integrations</span>
-              </div>
-              <span class="repo-action-icon">→</span>
-            </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 6. Practitioner Adoption Roadmap -->
-    <section id="adoption" class="adoption-section">
+    <!-- 6. September 2026 Community Call to Action (Issue #23) -->
+    <section id="cta" class="cta-section">
       <div class="container">
-        <div class="section-header">
-          <div class="kicker">Practitioner Guide</div>
-          <h2>How to Adopt ZeroSOC</h2>
-          <p>
-            ZeroSOC is designed to be adopted incrementally without ripping and replacing your current security stack.
-          </p>
-        </div>
-
-        <div class="roadmap-grid">
-          <div class="roadmap-card">
-            <div class="roadmap-step-num">01</div>
-            <h4>Explore the Playbooks</h4>
+        <div class="cta-banner-card">
+          <div class="cta-banner-header">
+            <div class="cta-date-badge">Public Kickoff · September 15, 2026</div>
+            <h2>Join the ZeroSOC Working Group</h2>
             <p>
-              Browse the Markdown catalogs in <code>04-Playbooks/</code> for domain triage, A/B hypothesis
-              investigation, and containment procedures.
+              On September 15, 2026, we are launching a formal public Call to Action for SecOps practitioners,
+              detection engineers, incident responders, and security leaders to expand the community working group
+              and organize the first collaborative development sprints.
             </p>
-            <a href="https://github.com/ZeroSOC/zerosoc-framework/tree/main/04-Playbooks" target="_blank"
-              rel="noopener noreferrer" class="roadmap-link">
-              Playbook Catalog →
+          </div>
+
+          <div class="cta-tracks-grid">
+            <div class="cta-track-card">
+              <h5>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                <span>Playbooks &amp; OCSF</span>
+              </h5>
+              <p>Author and peer-review domain triage and A/B hypothesis investigation playbooks mapped to real-world ATT&amp;CK techniques.</p>
+            </div>
+
+            <div class="cta-track-card">
+              <h5>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 16v1a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1"/><path d="M18 8h4v8h-4"/><path d="M10 12h8"/></svg>
+                <span>MCP Tool Servers</span>
+              </h5>
+              <p>Build and enhance Model Context Protocol servers connecting SecOps agents safely to native SIEM, EDR, and Cloud APIs.</p>
+            </div>
+
+            <div class="cta-track-card">
+              <h5>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24"/></svg>
+                <span>Range &amp; Benchmarks</span>
+              </h5>
+              <p>Create adversary emulation scenarios, synthetic telemetry sets, and evaluation tests to benchmark autonomous SecOps reasoning.</p>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="https://github.com/ZeroSOC/zerosoc-framework/discussions" target="_blank" rel="noopener noreferrer"
+              class="btn btn-primary" style="margin-right: 0.75rem;">
+              <span>Join GitHub Discussions &amp; Pre-Register</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="https://github.com/ZeroSOC" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Star on GitHub
             </a>
           </div>
 
-          <div class="roadmap-card">
-            <div class="roadmap-step-num">02</div>
-            <h4>Align to OCSF Schema</h4>
-            <p>
-              Map internal detection rules and alert findings to standardized OCSF classes
-              (<code>Detection Finding [2004]</code> and <code>Incident Finding [2005]</code>).
-            </p>
-            <a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/02-Taxonomy/alert_types.md" target="_blank"
-              rel="noopener noreferrer" class="roadmap-link">
-              Alert Taxonomy →
-            </a>
-          </div>
-
-          <div class="roadmap-card">
-            <div class="roadmap-step-num">03</div>
-            <h4>Deploy Executor-Neutral SOPs</h4>
-            <p>
-              Implement standardized playbooks across analyst runbooks, deterministic SOAR automations, and LLM agent
-              prompts.
-            </p>
-            <a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/01-Foundation/framework_manifest.md"
-              target="_blank" rel="noopener noreferrer" class="roadmap-link">
-              Framework Manifest →
-            </a>
-          </div>
-
-          <div class="roadmap-card">
-            <div class="roadmap-step-num">04</div>
-            <h4>Measure with G1–G5 Gates</h4>
-            <p>
-              Track MTTA, MTTV, MTTC, and the false-positive surface across the five measurement gates to guide
-              detection engineering.
-            </p>
-            <a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/05-Metrics/operational_metrics.md"
-              target="_blank" rel="noopener noreferrer" class="roadmap-link">
-              Operational Metrics →
-            </a>
+          <div class="cta-channels-bar">
+            <div class="cta-channel-badge">
+              <span>Primary Hub</span> Working Group Slack (Launching Sept 15)
+            </div>
+            <div class="cta-channel-badge">
+              <span>RFCs &amp; Specs</span> GitHub Discussions &amp; Issues
+            </div>
           </div>
         </div>
       </div>
@@ -472,9 +602,7 @@
         <div class="section-header">
           <div class="kicker">Practitioner FAQ</div>
           <h2>Frequently Asked Questions</h2>
-          <p>
-            Addressing the hard questions and real skepticism regarding autonomous security operations.
-          </p>
+          <p>Addressing the hard questions and real skepticism regarding autonomous security operations.</p>
         </div>
 
         <div class="faq-container">
@@ -482,22 +610,17 @@
           <div class="faq-item active">
             <button class="faq-trigger" aria-expanded="true">
               <span>Does "ZeroSOC" imply fully autonomous operations without humans today?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
             <div class="faq-content">
               <div class="faq-body">
                 <p>
-                  <strong>No.</strong> Despite the name, we do not believe fully autonomous ("lights-out") SOCs are
-                  achievable or desirable today. ZeroSOC represents an <strong>aspirational north star</strong> to guide
-                  collective practitioner research and standardization.
+                  <strong>No.</strong> We do not believe fully autonomous ("lights-out") SOCs are achievable or desirable today. ZeroSOC represents an <strong>aspirational north star</strong> to guide collective practitioner research and standardization.
                 </p>
                 <p>
-                  In reality, mature SecOps is a hybrid continuum: deterministic automation for routine volume, AI
-                  agents for bounded hypothesis testing under uncertainty, and human analysts for safety gates,
-                  ambiguous escalations, and accountability.
+                  In reality, mature SecOps is a hybrid continuum: deterministic automation for routine volume, AI agents for bounded hypothesis testing under uncertainty, and human analysts for safety gates, ambiguous escalations, and accountability.
                 </p>
               </div>
             </div>
@@ -506,22 +629,18 @@
           <!-- Q2 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
-              <span>Is ZeroSOC claiming to have the authoritative, single truth for SecOps?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
+              <span>Why start with the Framework instead of jumping straight to LLM agents?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
             <div class="faq-content">
               <div class="faq-body">
                 <p>
-                  <strong>Not at all.</strong> The framework is an <strong>open working draft (v0.x)</strong> created to
-                  initiate structured dialogue among detection engineers, incident responders, and automation
-                  architects.
+                  <strong>Structure precedes autonomy.</strong> You cannot automate what you haven't standardized. Giving an AI agent access to production tools without formal taxonomy, explicit schema contracts, and normative playbooks leads to unpredictable hallucinations and uncontained blast radiuses.
                 </p>
                 <p>
-                  No single vendor or team has all the answers for autonomous SecOps. ZeroSOC provides an extensible
-                  baseline for the community to test, challenge, and co-develop through open RFCs on GitHub.
+                  The ZeroSOC Framework provides the foundational operational grammar: Karpathy's Law (<em>"you can outsource thinking, but you cannot outsource understanding"</em>), executor-neutral playbooks, and verifiable G1–G5 measurement gates.
                 </p>
               </div>
             </div>
@@ -530,23 +649,20 @@
           <!-- Q3 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
-              <span>Why another framework? How does this relate to NIST, MITRE, or ISO/IEC 27035?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
+              <span>How does the project handle licensing across specifications and runtime?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
             <div class="faq-content">
               <div class="faq-body">
                 <p>
-                  <strong>ZeroSOC does not replace existing standards—it operationalizes them.</strong>
+                  ZeroSOC follows an open-core licensing posture designed to maximize community adoption while defending the open runtime:
                 </p>
-                <p>
-                  While NIST CSF 2.0 / SP 800-61r3 provide lifecycle governance and MITRE ATT&CK catalogs techniques,
-                  ZeroSOC provides the missing operational glue: standardized, executor-neutral Markdown playbooks, OCSF
-                  v1.8 schema contracts, and auditable metrics that execute identically across human analysts,
-                  deterministic scripts, and AI agents.
-                </p>
+                <ul style="margin-left: 1.25rem; margin-top: 0.5rem;">
+                  <li><strong>Apache-2.0:</strong> <code>zerosoc-framework</code>, <code>zerosoc-skills</code>, <code>zerosoc-mcp</code>, and <code>zerosoc-cyber-range</code> are permissively licensed so specifications, agent skills, tool servers, and benchmarks spread freely without friction.</li>
+                  <li><strong>AGPLv3:</strong> <code>zerosoc-platform</code> (the reference execution engine) uses copyleft to ensure that downstream runtime improvements remain open to the entire community.</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -555,22 +671,17 @@
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
               <span>Isn't giving AI agents containment authority dangerous in production?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
             <div class="faq-content">
               <div class="faq-body">
                 <p>
-                  <strong>Unconstrained autonomy is dangerous.</strong> That is why the framework mandates explicit <a
-                    href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/07-Governance/agentic_guardrails.md"
-                    target="_blank" rel="noopener noreferrer">Agentic Guardrails</a>, JIT Scoping, and mandatory
-                  Human-in-the-Loop (HITL) approval gates.
+                  <strong>Unconstrained autonomy is dangerous.</strong> That is why ZeroSOC mandates safe-by-default tool separation (read tools strictly isolated from write/response tools), explicit autonomy sliders, and mandatory Human-in-the-Loop (HITL) approval gates for any destructive action.
                 </p>
                 <p>
-                  ZeroSOC requires transparent ("glass-box") reasoning logs and Case-attributed actions so organizations
-                  can mathematically measure and strictly control their blast radius.
+                  Transparent reasoning logs and case-attributed audit trails ensure that teams maintain complete governance over their blast radius.
                 </p>
               </div>
             </div>
@@ -579,57 +690,21 @@
           <!-- Q5 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
-              <span>How does the framework ensure playbooks are practical rather than speculative?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
-                <path d="M6 9l6 6 6-6" />
-              </svg>
-            </button>
-            <div class="faq-content">
-              <div class="faq-body">
-                <p>
-                  ZeroSOC enforces three strict contribution and grounding models (<a
-                    href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/CONTRIBUTING.md" target="_blank"
-                    rel="noopener noreferrer">CONTRIBUTING.md</a>):
-                </p>
-                <ul style="margin-left: 1.25rem; margin-top: 0.5rem;">
-                  <li><strong>The Sigma Model:</strong> Strict YAML schema conformance and mandatory frontmatter.</li>
-                  <li><strong>The OCSF Model:</strong> Telemetry normalization to OCSF v1.8 (Alert Types for detections
-                    vs Incident Categories <code>IC-##</code> for impact).</li>
-                  <li><strong>The MITRE ATT&CK Model:</strong> Evidence-based grounding in real-world observed adversary
-                    behaviors with public threat intelligence citations. All playbooks must pass manual tabletop
-                    walkthrough validation before promotion.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Q6 -->
-          <div class="faq-item">
-            <button class="faq-trigger" aria-expanded="false">
               <span>How can practitioners and teams contribute?</span>
-              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
             <div class="faq-content">
               <div class="faq-body">
                 <p>
-                  Contributions follow an open, issue-first workflow under Apache-2.0:
+                  Contributions follow an open, issue-first workflow with Developer Certificate of Origin (DCO) sign-off (<code>git commit -s</code>), with no CLA required:
                 </p>
                 <ol style="margin-left: 1.25rem; margin-top: 0.5rem; line-height: 1.6;">
-                  <li><strong>Open an Issue First:</strong> Discuss the proposal on GitHub (<a
-                      href="https://github.com/ZeroSOC/zerosoc-framework/issues" target="_blank"
-                      rel="noopener noreferrer">zerosoc-framework/issues</a>) to agree on scope.</li>
-                  <li><strong>Author & Format:</strong> Write Markdown playbooks using designated templates.</li>
-                  <li><strong>Verify via Tabletop:</strong> Ensure every step is actionable by a human analyst and
-                    cross-links resolve.</li>
-                  <li><strong>DCO Sign-off:</strong> Sign off commits with the Developer Certificate of Origin
-                    (<code>git commit -s</code>), with no CLA required.</li>
-                  <li><strong>Open Governance:</strong> Clear progression from Contributor → Reviewer → Maintainer. The
-                    Project Sponsor serves solely as a Trademark Steward with <strong>no special technical veto</strong>
-                    over open decisions.</li>
+                  <li><strong>Open an Issue / RFC First:</strong> Discuss proposals on GitHub to align on scope.</li>
+                  <li><strong>Author &amp; Format:</strong> Write Markdown playbooks, MCP tools, or cyber range scenarios using designated templates.</li>
+                  <li><strong>Verify via Tabletop / Range:</strong> Validate actions empirically before promotion.</li>
+                  <li><strong>DCO Sign-off:</strong> Sign off commits under Apache-2.0 with clear contributor provenance.</li>
                 </ol>
               </div>
             </div>
@@ -644,14 +719,14 @@
     <div class="container">
       <!-- Standards Alignment Grid -->
       <div class="standards-section">
-        <div class="standards-heading">Aligned with Global Security & Data Standards</div>
+        <div class="standards-heading">Aligned with Global Security &amp; Data Standards</div>
         <div class="standards-badges">
           <span class="standards-pill">NIST CSF 2.0</span>
           <span class="standards-pill">NIST SP 800-61 Rev. 3</span>
           <span class="standards-pill">ISO/IEC 27035</span>
-          <span class="standards-pill">OCSF v1.8.0</span>
-          <span class="standards-pill">MITRE ATT&CK® v19</span>
-          <span class="standards-pill">NIS2 & DORA Auditing</span>
+          <span class="standards-pill">OCSF Schema</span>
+          <span class="standards-pill">MITRE ATT&amp;CK®</span>
+          <span class="standards-pill">NIS2 &amp; DORA Auditing</span>
         </div>
       </div>
 
@@ -662,8 +737,8 @@
             <img src="assets/zerosoc_logo.png" alt="ZeroSOC Logo" style="height:26px; width:auto;">
           </div>
           <p>
-            An open, vendor-independent standard for Autonomous Security Operations. Fostering a collaborative,
-            community-driven approach to autonomous SecOps.
+            An open, vendor-independent standard for Autonomous Security Operations. Democratizing autonomous defense
+            through transparent, community-governed engineering.
           </p>
         </div>
 
@@ -688,15 +763,15 @@
                 rel="noopener noreferrer">zerosoc-framework</a></li>
             <li><a href="https://github.com/ZeroSOC/zerosoc-platform" target="_blank"
                 rel="noopener noreferrer">zerosoc-platform</a></li>
-            <li><a href="https://github.com/ZeroSOC/zerosoc-cyber-range" target="_blank"
-                rel="noopener noreferrer">zerosoc-cyber-range</a></li>
             <li><a href="https://github.com/ZeroSOC/zerosoc-mcp" target="_blank"
                 rel="noopener noreferrer">zerosoc-mcp</a></li>
+            <li><a href="https://github.com/ZeroSOC/zerosoc-cyber-range" target="_blank"
+                rel="noopener noreferrer">zerosoc-cyber-range</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5>Community & Governance</h5>
+          <h5>Community &amp; Governance</h5>
           <ul class="footer-links">
             <li><a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/CONTRIBUTING.md" target="_blank"
                 rel="noopener noreferrer">Contributing Guide</a></li>
@@ -713,9 +788,8 @@
       <!-- Footer Bottom -->
       <div class="footer-bottom">
         <div>
-          Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank"
-            rel="noopener noreferrer">Apache License, Version 2.0</a>. Documentation licensed under <a
-            href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC-BY-4.0</a>.
+          Specifications, Skills, MCP Servers &amp; Cyber Range licensed under <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank"
+            rel="noopener noreferrer">Apache-2.0</a>. Platform licensed under <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener noreferrer">AGPLv3</a>.
         </div>
         <div>
           ZeroSOC is an independent, community-governed open-source initiative.
