@@ -126,45 +126,41 @@
             </div>
           </div>
 
-          <!-- The 4 Strategic Pillars (Why We Build in the Open) -->
+          <!-- The 4 Core Industry Challenges (The Whys) -->
           <div class="whys-grid">
             <div class="whys-card">
-              <div class="whys-kicker">Pillar 01 · The Threat</div>
-              <h3>Machine-Speed Threats</h3>
+              <div class="whys-kicker">Challenge 01 · Speed Asymmetry</div>
+              <h3>Machine-Speed Adversaries</h3>
               <p>
-                Adversaries weaponize AI for automated reconnaissance, dynamic polymorphism, and sub-hour breakout
-                times.
-                Traditional manual triage operating at human speed cannot match the velocity of machine-speed attacks.
+                Adversaries increasingly automate reconnaissance, craft dynamic payloads, and compress dwell times to under an hour.
+                Manual triage operating at human speed cannot keep pace with automated attack chains.
               </p>
             </div>
 
             <div class="whys-card highlight">
-              <div class="whys-kicker">Pillar 02 · Accessibility</div>
-              <h3>Breaking the Cost Barrier</h3>
+              <div class="whys-kicker">Challenge 02 · Cost &amp; Lock-In</div>
+              <h3>Commercial Pricing Barriers</h3>
               <p>
-                Commercial "AI SOC" vendors package closed wrappers with luxury enterprise price tags. ZeroSOC
-                democratizes
-                autonomous defense so healthcare, public sectors, and mid-market teams are not left behind.
+                Proprietary "AI SOC" solutions attach luxury enterprise pricing floors, opaque data-ingest surcharges,
+                and vendor lock-in, leaving most organizations unable to deploy modern SecOps automation.
               </p>
             </div>
 
             <div class="whys-card">
-              <div class="whys-kicker">Pillar 03 · Discipline</div>
-              <h3>Framework First</h3>
+              <div class="whys-kicker">Challenge 03 · Operational Chaos</div>
+              <h3>Unstandardized AI Hallucinations</h3>
               <p>
-                <em>Structure precedes autonomy.</em> Handing LLMs raw API keys without normalized taxonomy, explicit
-                schema
-                contracts, and normative playbooks creates chaotic hallucinations. Karpathy's Law and G1–G5 gates keep
-                operations grounded.
+                Deploying LLMs against raw security telemetry without standardized taxonomy, explicit schema contracts,
+                or formal playbooks leads to non-deterministic decisions, alert noise, and uncontained blast radiuses.
               </p>
             </div>
 
             <div class="whys-card">
-              <div class="whys-kicker">Pillar 04 · Trust</div>
-              <h3>Glass-Box Transparency</h3>
+              <div class="whys-kicker">Challenge 04 · Trust Deficit</div>
+              <h3>Opaque "Black-Box" Automation</h3>
               <p>
-                Security cannot rely on opaque prompt silos. ZeroSOC enforces open code, inspectable multi-hypothesis
-                reasoning traces (A/B testing), strict Human-in-the-Loop approval gates, and complete vendor neutrality.
+                Closed AI platforms obscure their reasoning logic and prompt chains. Security teams cannot safely delegate
+                containment actions without verifiable audit trails, inspectable evidence, and human supervision.
               </p>
             </div>
           </div>
@@ -545,10 +541,10 @@
               <img src="assets/s_autonomy.png" alt="ZeroSOC Analyst Console: Operator Autonomy Controls" loading="lazy">
             </div>
             <div class="screenshot-info">
-              <h4>Operator Autonomy &amp; Action Reversibility</h4>
+              <h4>Operator Autonomy &amp; Guardrails</h4>
               <p>
-                A policy-driven safety dial anchored on action reversibility: automate low-risk reversible containment
-                (like host isolation) via confidence thresholds, while enforcing HITL approval for destructive actions.
+                Operators configure confidence thresholds and mandatory Human-in-the-Loop (HITL) approval gates per
+                incident category, ensuring containment actions stay strictly bounded within organizational policy.
               </p>
             </div>
           </div>
@@ -733,10 +729,13 @@
             <div class="faq-content">
               <div class="faq-body">
                 <p>
-                  <strong>Unconstrained autonomy is dangerous.</strong> ZeroSOC anchors containment to <strong>action reversibility</strong> and blast radius: low-risk reversible actions (like host isolation) can be automated under strict confidence thresholds, while destructive changes mandate Human-in-the-Loop (HITL) approval.
+                  <strong>Unconstrained autonomy is dangerous.</strong> That is why ZeroSOC mandates safe-by-default
+                  tool separation (read tools strictly isolated from write/response tools), explicit autonomy sliders,
+                  and mandatory Human-in-the-Loop (HITL) approval gates for any non-reversible action.
                 </p>
                 <p>
-                  Safe-by-default tool separation and transparent reasoning logs ensure teams maintain total governance over their environment.
+                  Transparent reasoning logs and case-attributed audit trails ensure that teams maintain complete
+                  governance over their blast radius.
                 </p>
               </div>
             </div>
