@@ -124,10 +124,9 @@
 
     <!-- 01 Foundation -->
     <g transform="translate(200, 540)">
-        <rect width="800" height="100" rx="16" fill="url(#fndGrad)" filter="url(#shadow)"/>
+        <rect width="800" height="90" rx="16" fill="url(#fndGrad)" filter="url(#shadow)"/>
         <text x="400" y="40" text-anchor="middle" class="box-title">01 - Foundation</text>
         <text x="400" y="70" text-anchor="middle" class="box-text">Strategic Manifest, OCSF-aligned SOC Glossary, Design Decisions &amp; Roadmap</text>
-        <text x="400" y="90" text-anchor="middle" class="small-text">"You can outsource thinking, but you cannot outsource understanding"</text>
     </g>
 
 </svg>
