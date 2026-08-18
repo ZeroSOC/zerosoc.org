@@ -797,9 +797,450 @@
 }
 
 /* ==========================================================================
-   10. Responsive Adjustments
+   10. Mission & Strategic Pillars Grid
+   ========================================================================== */
+.whys-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.whys-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-top: 3px solid var(--blue-primary);
+  border-radius: var(--radius-md);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.whys-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glass-shadow-hover);
+  border-color: var(--blue-border);
+}
+
+.whys-card.highlight {
+  border-top-color: var(--orange-primary);
+  background: linear-gradient(180deg, rgba(234, 88, 12, 0.03) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.whys-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--blue-primary);
+  margin-bottom: 0.6rem;
+}
+
+.whys-card.highlight .whys-kicker {
+  color: var(--orange-primary);
+}
+
+.whys-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.whys-card p {
+  font-size: 0.92rem;
+  color: var(--ink-body);
+  line-height: 1.55;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* ==========================================================================
+   11. Ecosystem Architecture & Flow
+   ========================================================================== */
+.ecosystem-flow-container {
+  background: var(--glass-bg-elevated);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin: 2.5rem 0 3rem 0;
+  box-shadow: var(--glass-shadow);
+}
+
+.ecosystem-flow-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.ecosystem-flow-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.flow-step-node {
+  flex: 1;
+  min-width: 170px;
+  background: rgba(248, 250, 252, 0.95);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.15rem;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.flow-step-node:hover {
+  border-color: var(--blue-primary);
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
+}
+
+.flow-step-num {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--blue-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.25rem;
+}
+
+.flow-step-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+  margin-bottom: 0.2rem;
+}
+
+.flow-step-role {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+}
+
+.flow-step-arrow {
+  color: var(--ink-light);
+  font-size: 1.25rem;
+  font-weight: bold;
+  user-select: none;
+}
+
+.ecosystem-workstreams-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.workstream-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-normal);
+}
+
+.workstream-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glass-shadow-hover);
+  border-color: var(--blue-border);
+  background: #ffffff;
+}
+
+.workstream-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.workstream-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.workstream-title {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+}
+
+.workstream-desc {
+  font-size: 0.92rem;
+  color: var(--ink-body);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.workstream-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--glass-border-subtle);
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.tag-agpl {
+  background: rgba(124, 58, 237, 0.08);
+  color: #7c3aed;
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+/* ==========================================================================
+   12. Framework Infographic Container
+   ========================================================================== */
+.infographic-wrapper {
+  background: #090e17;
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin: 2rem 0 3rem 0;
+  box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.infographic-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.infographic-caption {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #94a3b8;
+  text-align: center;
+  margin-top: 1rem;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   13. Platform Screenshots Showcase
+   ========================================================================== */
+.platform-showcase {
+  margin-top: 2.5rem;
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.screenshot-card {
+  background: var(--glass-bg-elevated);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--glass-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-normal);
+}
+
+.screenshot-card:hover {
+  box-shadow: var(--glass-shadow-hover);
+  border-color: var(--blue-border);
+  transform: translateY(-2px);
+}
+
+.screenshot-img-frame {
+  background: #0f172a;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  margin-bottom: 1.25rem;
+}
+
+.screenshot-img-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.screenshot-card:hover .screenshot-img-frame img {
+  transform: scale(1.015);
+}
+
+.screenshot-info h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+  margin-bottom: 0.4rem;
+}
+
+.screenshot-info p {
+  font-size: 0.9rem;
+  color: var(--ink-body);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================================================
+   14. September 2026 Community Call to Action
+   ========================================================================== */
+.cta-section {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(37, 99, 235, 0.04) 50%, transparent 100%);
+}
+
+.cta-banner-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 246, 255, 0.92) 100%);
+  border: 1.5px solid var(--blue-border);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem 3rem;
+  box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15), var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--blue-primary) 0%, var(--orange-primary) 100%);
+}
+
+.cta-banner-header {
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto 2.5rem auto;
+}
+
+.cta-date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--orange-primary);
+  background: var(--orange-soft);
+  border: 1px solid var(--orange-border);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+.cta-banner-header h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.cta-banner-header p {
+  font-size: 1.05rem;
+  color: var(--ink-body);
+  line-height: 1.6;
+}
+
+.cta-tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.cta-track-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.cta-track-card h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink-heading);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta-track-card p {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cta-channels-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--glass-border-subtle);
+}
+
+.cta-channel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-heading);
+}
+
+.cta-channel-badge span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--blue-primary);
+  background: var(--blue-soft);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--blue-border);
+}
+
+/* ==========================================================================
+   15. Responsive Adjustments
    ========================================================================== */
 @media (max-width: 1024px) {
+  .whys-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ecosystem-workstreams-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .screenshot-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-tracks-grid {
+    grid-template-columns: 1fr;
+  }
   .pipeline-diagram {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -815,6 +1256,25 @@
 }
 
 @media (max-width: 768px) {
+  .whys-grid {
+    grid-template-columns: 1fr;
+  }
+  .ecosystem-workstreams-grid {
+    grid-template-columns: 1fr;
+  }
+  .ecosystem-flow-bar {
+    flex-direction: column;
+  }
+  .flow-step-node {
+    width: 100%;
+  }
+  .flow-step-arrow {
+    transform: rotate(90deg);
+    margin: 0.25rem 0;
+  }
+  .cta-banner-card {
+    padding: 2rem 1.5rem;
+  }
   .nav-links {
     display: none;
     position: absolute;
@@ -860,3 +1320,4 @@
     text-align: center;
   }
 }
+
