@@ -78,7 +78,7 @@
     <g transform="translate(200, 150)">
         <rect width="800" height="90" rx="16" fill="url(#govGrad)" filter="url(#shadow)"/>
         <text x="400" y="40" text-anchor="middle" class="box-title">07 - Governance</text>
-        <text x="400" y="70" text-anchor="middle" class="box-text">Ensures safe, bounded execution via JIT Scoping, Least-Privilege, and Human-in-the-Loop Supervision.</text>
+        <text x="400" y="70" text-anchor="middle" class="box-text">Bounded execution: least access, approval for high-impact actions, human accountability and supervision</text>
     </g>
 
     <!-- 02 Taxonomy -->
@@ -88,7 +88,8 @@
         <text x="110" y="80" text-anchor="middle" class="box-text">Classification Schema</text>
         <text x="110" y="125" text-anchor="middle" class="small-text">• Alert Types (Domain)</text>
         <text x="110" y="155" text-anchor="middle" class="small-text">• Incident Categories (IC)</text>
-        <text x="110" y="185" text-anchor="middle" class="small-text">• MITRE ATT&amp;CK Mappings</text>
+        <text x="110" y="185" text-anchor="middle" class="small-text">• Case Schema (OCSF)</text>
+        <text x="110" y="215" text-anchor="middle" class="small-text">• ATT&amp;CK Mappings (indicative)</text>
     </g>
 
     <!-- 03 Processes -->
@@ -103,15 +104,15 @@
         <rect width="560" height="110" rx="16" fill="#0369a1" filter="url(#shadow)"/>
         <text x="280" y="40" text-anchor="middle" class="box-title">04 - Playbooks</text>
         <text x="280" y="70" text-anchor="middle" class="box-text">Executable Logic (Executor-Neutral): Domain Triage &amp; Incident Investigation</text>
-        <text x="280" y="95" text-anchor="middle" class="small-text">Drives Concurrent A/B Hypothesis Testing (Malicious vs. Benign)</text>
+        <text x="280" y="95" text-anchor="middle" class="small-text">Malicious &amp; Benign hypotheses, resolved by tagged evidence</text>
     </g>
 
     <!-- 05 Metrics -->
     <g transform="translate(920, 260)">
         <rect width="220" height="100" rx="16" fill="url(#metGrad)" filter="url(#shadow)"/>
         <text x="110" y="40" text-anchor="middle" class="box-title">05 - Metrics</text>
-        <text x="110" y="70" text-anchor="middle" class="small-text">Mathematical precision for</text>
-        <text x="110" y="90" text-anchor="middle" class="small-text">Speed, Accuracy &amp; Token Econ</text>
+        <text x="110" y="70" text-anchor="middle" class="small-text">Process-anchored metrics for</text>
+        <text x="110" y="90" text-anchor="middle" class="small-text">Speed, Quality, Autonomy &amp; Tokens</text>
     </g>
 
     <!-- 06 Deliverables -->
@@ -126,7 +127,7 @@
     <g transform="translate(200, 540)">
         <rect width="800" height="90" rx="16" fill="url(#fndGrad)" filter="url(#shadow)"/>
         <text x="400" y="40" text-anchor="middle" class="box-title">01 - Foundation</text>
-        <text x="400" y="70" text-anchor="middle" class="box-text">Strategic Manifest, OCSF-aligned SOC Glossary, Design Decisions &amp; Roadmap</text>
+        <text x="400" y="70" text-anchor="middle" class="box-text">Manifest, OCSF-aligned Definitions, Design Decisions &amp; Roadmap</text>
     </g>
 
 </svg>
