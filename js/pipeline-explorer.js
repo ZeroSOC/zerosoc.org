@@ -12,42 +12,42 @@
       tag: 'Phase 1 · Detection Lifecycle',
       title: 'Preparation & Engineering',
       gate: 'G1 — Alert Raised',
-      gateCode: 'OCSF 2004 (severity_id ≥ Low)',
-      objective: 'Capturing raw telemetry, normalizing into queryable events, and engineering robust detection models.',
-      roles: 'Security Reliability Engineer (SRE), Detection Engineer',
+      gateCode: 'OCSF Detection Finding 2004 (severity_id ≥ Low)',
+      objective: 'Engineering and tuning detection logic as code, keeping the telemetry pipeline healthy, and maintaining the SOC Knowledge Base that triage consults.',
+      roles: 'Detection Engineer, Security Platform Engineer',
       consumes: [
-        'Raw telemetry streams & logs',
-        'Tuning feedback from Phase 2 FP/Benign dispositions',
-        'Phase 4 Post-Incident action items',
-        'Threat intelligence (MITRE ATT&CK TTPs)'
+        'Raw telemetry from onboarded log sources',
+        'Tuning feedback: False Positive and Benign dispositions from Phase 2',
+        'Post-Incident action items from Phase 4',
+        'Threat intelligence (new adversary TTPs) and the CMDB asset inventory'
       ],
       produces: [
         'Normalized OCSF Events',
-        'Detection Findings (Alerts, severity_id ≥ Low)',
-        'Monitored, healthy telemetry pipeline',
-        'Verified exception & allow lists'
+        'Signals (Informational Detection Findings) and Alerts (severity_id ≥ Low)',
+        'A monitored, healthy telemetry pipeline',
+        'Current exception & allow lists'
       ],
-      deliverables: 'Detection Logic, Filter Baselines, Exception Rules',
+      deliverables: 'Detection-as-Code Logic, Log-Source Health Checks, Exception & Allow Lists',
       githubUrl: 'https://github.com/ZeroSOC/zerosoc-framework/blob/main/03-Processes/01-preparation_and_engineering.md'
     },
     phase2: {
       id: 'phase2',
       tag: 'Phase 2 · Detection & Analysis',
       title: 'Triage & Investigation',
-      gate: 'G2 & G3 — Triage Decision & Verdict',
-      gateCode: 'OCSF 2005 (verdict_id: FP / Benign / TP Incident)',
-      objective: 'Fast alert aggregation into Cases, domain-specific triage, and concurrent A/B hypothesis testing.',
-      roles: 'Incident Investigator, Threat Hunter, Autonomous AI Orchestrator',
+      gate: 'G2 Triage Decision & G3 Investigation Verdict',
+      gateCode: 'OCSF Incident Finding 2005 verdict_id',
+      objective: 'Fast, alert-centric triage that closes or promotes each Case, then an investigation that tests concurrent Malicious and Benign hypotheses to a scored verdict.',
+      roles: 'Security Analyst, Threat Hunter (any executor: human, automation or AI agent)',
       consumes: [
-        'Alerts (OCSF 2004) aggregated into Cases (OCSF 2005)',
-        'Enrichment sources (CMDB, Identity, Threat Intel)',
-        'Standardized Playbooks (04-Playbooks)'
+        'Alerts (OCSF 2004) aggregated into Cases (OCSF 2005); Signals are consulted, never triaged',
+        'Enrichment: threat intelligence, CMDB, identity directory, SOC Knowledge Base',
+        'Domain triage and Incident Category playbooks (04-Playbooks)'
       ],
       produces: [
-        'G2: Closed Case (False Positive / Benign) OR Promotion to Investigation',
-        'G3: Confirmed Incident (verdict_id = 2) + Incident Category (IC-##)',
-        'Triage Note (06-Deliverables/triage_note.md)',
-        'Investigation Note (06-Deliverables/investigation_note.md)'
+        'G2: Case closed as False Positive, Benign or Duplicate, or promoted to Investigation',
+        'G3: Case closed as False Positive, Benign, Duplicate or Insufficient Data, or Confirmed Incident (verdict_id 2) with its Incident Category',
+        'Triage Note and Investigation Note: tagged findings, resolution and confidence',
+        'A tuning ticket to Phase 1 for every False Positive'
       ],
       deliverables: 'Triage Note, Investigation Note, Case Timeline',
       githubUrl: 'https://github.com/ZeroSOC/zerosoc-framework/blob/main/03-Processes/02-detection_and_analysis.md'
@@ -57,43 +57,43 @@
       tag: 'Phase 3 · Containment & Recovery',
       title: 'Incident Response',
       gate: 'G4 — Containment',
-      gateCode: 'Isolating control confirmed executed',
-      objective: 'Executing policy-bounded containment guardrails, eradication procedures, and restoring safe operations.',
-      roles: 'Incident Coordinator, Response Specialist, CSIRT',
+      gateCode: 'A containment action applied and confirmed',
+      objective: 'Containing, eradicating and recovering the Incident under the risk-based autonomy matrix: reversible actions are pre-authorized, the rest wait for human approval.',
+      roles: 'Security Analyst (the Case assignee carries the Incident), SOC Manager (regulatory notification)',
       consumes: [
-        'Confirmed Incident (OCSF 2005, verdict_id = 2)',
-        'Investigation → Response handoff record',
-        'Agentic Guardrails & JIT scoping rules'
+        'Confirmed Incident (OCSF 2005, verdict_id 2)',
+        'Investigation → Response phase transition contract: category, scope, timeline with T0, severity, confidence, impact, recommended actions',
+        'Agentic Guardrails: least access, the HITL approval payload, human-assignee conditions'
       ],
       produces: [
-        'Contained & eradicated environment',
-        'Restored systems & verified baseline',
-        'Regulatory notification triggers (NIS2 / DORA 24h/72h gates)',
-        'Handoff record to Post-Incident Activity'
+        'A contained, eradicated and recovered environment (containment lifted, services restored)',
+        'Every response action and approval recorded in the Case timeline',
+        'The regulatory notifications the Incident requires (NIS2 / DORA)',
+        'Transition to Post-Incident Activity'
       ],
-      deliverables: 'Containment Record, Notification Gate Records, Remediation Log',
+      deliverables: 'Case Timeline of Response Actions, Regulatory Notifications',
       githubUrl: 'https://github.com/ZeroSOC/zerosoc-framework/blob/main/03-Processes/03-response.md'
     },
     phase4: {
       id: 'phase4',
       tag: 'Phase 4 · Improvement & Feedback',
       title: 'Post-Incident Activity',
-      gate: 'G5 — Post-Hoc Review',
-      gateCode: 'HITL Review / QA Audit / PIR Complete',
-      objective: 'Conducting blameless root cause analysis, agent QA sampling, and feeding tuning data back to Phase 1.',
-      roles: 'SOC Director, Governance Manager, SRE / Detection Engineer',
+      gate: 'G5 — Review',
+      gateCode: 'A verdict re-examined: approval rejected or containment rolled back, QA sampling, or Post-Incident Review',
+      objective: 'Blameless root cause analysis of every responded Incident, QA sampling of autonomous closes, and tracked action items that feed detection engineering and the playbooks.',
+      roles: 'SOC Manager (convenes), Security Analyst (presents the Case), Detection Engineer',
       consumes: [
-        'Completed Incident record (or critical False-Positive outage)',
-        'Case-attributed agent action logs',
-        'Speed & disposition metrics (MTTA / MTTV / MTTC)'
+        'A Case whose response has ended, or a False Positive that caused a critical disruption',
+        'The Case record: timeline, Triage and Investigation Notes, provenance of every step',
+        'Case speed metrics: T0, MTTD, MTTC, MTTR'
       ],
       produces: [
-        'Blameless Post-Incident Review (PIR)',
-        'Continuous tuning tickets feeding directly into Phase 1',
-        'Playbook updates and QA compliance score',
-        '1-Month final regulatory report'
+        'A blameless root cause analysis',
+        'Tracked action items with risk-based deadlines: detection tuning, telemetry onboarding, playbook updates, IT fixes',
+        'Lessons learned in the SOC Knowledge Base',
+        'Adjudicated verdict misses, feeding Observed Triage Recall and Observed Verdict Recall'
       ],
-      deliverables: 'Post-Incident Review (PIR), Detection Tuning Tickets, QA Reports',
+      deliverables: 'Root Cause Analysis, Action Items, SOC Knowledge Base Entries',
       githubUrl: 'https://github.com/ZeroSOC/zerosoc-framework/blob/main/03-Processes/04-post_incident_activity.md'
     }
   };

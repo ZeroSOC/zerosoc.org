@@ -248,8 +248,8 @@
               </div>
               <p class="workstream-desc">
                 The implementation-independent specification layer. Defines OCSF-aligned taxonomy, executor-neutral
-                playbooks (Domain Triage &amp; Incident Category investigations), G1–G5 measurement gates, and open
-                governance in Markdown.
+                playbooks (Domain Triage &amp; Incident Category investigations), G1–G5 measurement gates with precision
+                and recall per gate, and open governance in Markdown.
               </p>
             </div>
             <div class="workstream-footer">
@@ -332,8 +332,8 @@
                 <span class="tag tag-agpl">AGPLv3</span>
               </div>
               <p class="workstream-desc">
-                The open reference implementation and runtime engine. Features concurrent A/B hypothesis
-                investigations, evidence timeline graphing, safe execution sandboxes, and an analyst web console for
+                The open reference implementation and runtime engine. Features concurrent Malicious/Benign
+                hypothesis investigations, evidence timeline graphing, safe execution sandboxes, and an analyst web console for
                 glass-box reasoning visibility and operator control.
               </p>
             </div>
@@ -432,7 +432,7 @@
           <h3>The 4 Phases &amp; 5 Measurement Gates</h3>
           <p>
             The operational pipeline standardizes 4 phases governed by 5 measurement gates (G1–G5) with explicit I/O
-            contracts. Click any phase below to inspect its inputs, outputs, and actor roles.
+            contracts. Click any phase below to inspect its inputs, outputs, and functions.
           </p>
         </div>
 
@@ -460,7 +460,7 @@
             <div class="pipeline-node" data-phase="phase4" role="tab" tabindex="0" aria-selected="false">
               <span class="node-phase-tag">Phase 4</span>
               <div class="node-title">Post-Incident Activity</div>
-              <div class="gate-badge">G5 · Review &amp; Tuning</div>
+              <div class="gate-badge">G5 · Review</div>
             </div>
           </div>
 
@@ -473,36 +473,39 @@
                 <h3 id="inspector-phase-title">Triage &amp; Investigation</h3>
               </div>
               <div class="tag orange" id="inspector-gate-badge">
-                <strong>G2 &amp; G3 — Triage Decision &amp; Verdict</strong>: OCSF 2005
+                <strong>G2 Triage Decision &amp; G3 Investigation Verdict</strong>: OCSF Incident Finding 2005 verdict_id
               </div>
             </div>
 
             <div class="inspector-grid">
               <div class="inspector-block">
                 <h5>Objective &amp; Roles</h5>
-                <p id="inspector-objective" style="margin-bottom:0.75rem;">Fast alert aggregation into Cases,
-                  domain-specific triage, and concurrent A/B hypothesis testing.</p>
+                <p id="inspector-objective" style="margin-bottom:0.75rem;">Fast, alert-centric triage that closes or
+                  promotes each Case, then an investigation that tests concurrent Malicious and Benign hypotheses to a
+                  scored verdict.</p>
                 <div style="font-family:var(--font-mono); font-size:0.78rem; color:var(--ink-muted);">
-                  <strong>Primary Actors:</strong> <span id="inspector-roles">Incident Investigator, Threat Hunter, AI
-                    Orchestrator</span>
+                  <strong>Functions:</strong> <span id="inspector-roles">Security Analyst, Threat Hunter (any executor:
+                    human, automation or AI agent)</span>
                 </div>
               </div>
 
               <div class="inspector-block">
                 <h5>Inputs (Consumes)</h5>
                 <ul id="inspector-consumes">
-                  <li>Alerts (OCSF 2004) aggregated into Cases (OCSF 2005)</li>
-                  <li>Enrichment sources (CMDB, Identity, Threat Intel)</li>
-                  <li>Standardized Playbooks (04-Playbooks)</li>
+                  <li>Alerts (OCSF 2004) aggregated into Cases (OCSF 2005); Signals are consulted, never triaged</li>
+                  <li>Enrichment: threat intelligence, CMDB, identity directory, SOC Knowledge Base</li>
+                  <li>Domain triage and Incident Category playbooks (04-Playbooks)</li>
                 </ul>
               </div>
 
               <div class="inspector-block">
                 <h5>Outputs (Produces)</h5>
                 <ul id="inspector-produces">
-                  <li>G2: Closed Case OR Promotion to Investigation</li>
-                  <li>G3: Confirmed Incident + Category (IC-##)</li>
-                  <li>Triage Note &amp; Investigation Note</li>
+                  <li>G2: Case closed as False Positive, Benign or Duplicate, or promoted to Investigation</li>
+                  <li>G3: Case closed as False Positive, Benign, Duplicate or Insufficient Data, or Confirmed Incident
+                    (verdict_id 2) with its Incident Category</li>
+                  <li>Triage Note and Investigation Note: tagged findings, resolution and confidence</li>
+                  <li>A tuning ticket to Phase 1 for every False Positive</li>
                 </ul>
               </div>
             </div>
@@ -540,7 +543,7 @@
             <div class="screenshot-info">
               <h4>Glass-Box Investigation Tracing</h4>
               <p>
-                Every query, LLM reasoning step, and concurrent A/B hypothesis evaluation (Malicious vs. Benign)
+                Every query, LLM reasoning step, and concurrent Malicious/Benign hypothesis evaluation
                 is recorded in a transparent, inspectable timeline for full auditability and regulatory compliance.
               </p>
             </div>
@@ -554,8 +557,9 @@
             <div class="screenshot-info">
               <h4>Operator Autonomy &amp; Guardrails</h4>
               <p>
-                Operators configure confidence thresholds and mandatory Human-in-the-Loop (HITL) approval gates per
-                incident category, ensuring containment actions stay strictly bounded within organizational policy.
+                Operators set the containment autonomy matrix: the action's reversibility, the asset's criticality and
+                the Case confidence and severity decide which actions run pre-authorized and which wait for
+                Human-in-the-Loop (HITL) approval.
               </p>
             </div>
           </div>
@@ -586,7 +590,7 @@
                 </svg>
                 <span>Playbooks &amp; OCSF</span>
               </h5>
-              <p>Author and peer-review domain triage and A/B hypothesis investigation playbooks mapped to real-world
+              <p>Author and peer-review domain triage and Malicious/Benign hypothesis investigation playbooks mapped to real-world
                 ATT&amp;CK techniques and incident types.</p>
             </div>
 
