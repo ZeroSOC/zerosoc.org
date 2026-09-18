@@ -95,7 +95,7 @@
               class="btn btn-secondary">
               Read Framework Specs
             </a>
-            <a href="#cta" class="btn btn-outline">Join September Kickoff</a>
+            <a href="#cta" class="btn btn-outline">Join the 24 Sept session</a>
           </div>
 
           <div class="hero-meta-tags">
@@ -259,7 +259,7 @@
           </a>
 
           <!-- Workstream 2: Agent Skills -->
-          <a href="https://github.com/ZeroSOC/zerosoc-platform/tree/main/.claude/skills" target="_blank"
+          <a href="https://github.com/ZeroSOC/zerosoc-skills" target="_blank"
             rel="noopener noreferrer" class="workstream-card">
             <div>
               <div class="workstream-card-header">
@@ -315,9 +315,8 @@
             </div>
           </a>
 
-          <!-- Workstream 4: zerosoc-platform -->
-          <a href="https://github.com/ZeroSOC/zerosoc-platform" target="_blank" rel="noopener noreferrer"
-            class="workstream-card">
+          <!-- Workstream 4: zerosoc-platform (no public repository yet) -->
+          <div class="workstream-card is-upcoming">
             <div>
               <div class="workstream-card-header">
                 <div class="workstream-title-group">
@@ -329,23 +328,22 @@
                   </svg>
                   <span class="workstream-title">zerosoc-platform</span>
                 </div>
-                <span class="tag tag-agpl">AGPLv3</span>
+                <span class="tag tag-status">In development</span>
               </div>
               <p class="workstream-desc">
-                The open reference implementation and runtime engine. Features concurrent Malicious/Benign
-                hypothesis investigations, evidence timeline graphing, safe execution sandboxes, and an analyst web console for
-                glass-box reasoning visibility and operator control.
+                The open reference implementation and runtime engine, currently in development. It is designed around
+                concurrent Malicious/Benign hypothesis investigations, evidence timeline graphing, safe execution
+                sandboxes, and an analyst web console for glass-box reasoning visibility and operator control.
               </p>
             </div>
             <div class="workstream-footer">
               <span class="tag">Runtime &amp; UI</span>
-              <span class="repo-action-icon">GitHub →</span>
+              <span class="workstream-status-note">AGPLv3 · repository not yet public</span>
             </div>
-          </a>
+          </div>
 
-          <!-- Workstream 5: zerosoc-cyber-range -->
-          <a href="https://github.com/ZeroSOC/zerosoc-cyber-range" target="_blank" rel="noopener noreferrer"
-            class="workstream-card">
+          <!-- Workstream 5: zerosoc-cyber-range (roadmap; no public repository) -->
+          <div class="workstream-card is-upcoming">
             <div>
               <div class="workstream-card-header">
                 <div class="workstream-title-group">
@@ -356,19 +354,20 @@
                   </svg>
                   <span class="workstream-title">zerosoc-cyber-range</span>
                 </div>
-                <span class="tag green">Apache-2.0</span>
+                <span class="tag tag-status">Planned</span>
               </div>
               <p class="workstream-desc">
-                Real cloud infrastructure provisioned via IaC (OpenTofu + Ansible) driving realistic adversary
-                emulations (MITRE Caldera, Atomic Red Team) against real endpoints, scored against ground truth by an
-                independent evaluation model.
+                A planned evaluation substrate: real cloud infrastructure driving adversary emulations against real
+                endpoints, scored against known ground truth — the only way to measure recall rather than estimate it.
+                Whether this is built in the open, and what shape would be useful, is an open question for the working
+                group.
               </p>
             </div>
             <div class="workstream-footer">
               <span class="tag">Testbed &amp; Benchmarks</span>
-              <span class="repo-action-icon">GitHub →</span>
+              <span class="workstream-status-note">Roadmap item · shape under discussion</span>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -567,17 +566,19 @@
       </div>
     </section>
 
-    <!-- 6. September 2026 Community Call to Action (Issue #23) -->
+    <!-- 6. Community Working Group - first virtual session, 24 September 2026 -->
     <section id="cta" class="cta-section">
       <div class="container">
         <div class="cta-banner-card">
           <div class="cta-banner-header">
-            <div class="cta-date-badge">Public Kickoff · September 15, 2026</div>
+            <div class="cta-date-badge">First Working Group Session · Thursday 24 September 2026 · 17:00 CEST</div>
             <h2>Join the ZeroSOC Working Group</h2>
             <p>
-              On September 15, 2026, we are launching a formal public Call to Action for SecOps practitioners,
-              detection engineers, incident responders, and security leaders to expand the community working group
-              and organize the first collaborative development sprints.
+              The framework is an open working draft maintained, today, by one practitioner. That is exactly why this
+              session exists: it needs adversarial review from people who have run real security operations. The first
+              virtual working group meeting is open to SecOps practitioners, detection engineers, incident responders
+              and security leaders — 60 minutes, in English, on Google Meet. Register on LinkedIn; the joining link is
+              posted to the event on the day.
             </p>
           </div>
 
@@ -588,10 +589,10 @@
                   <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                   <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
                 </svg>
-                <span>Playbooks &amp; OCSF</span>
+                <span>Verdicts under uncertainty</span>
               </h5>
-              <p>Author and peer-review domain triage and Malicious/Benign hypothesis investigation playbooks mapped to real-world
-                ATT&amp;CK techniques and incident types.</p>
+              <p>What should happen when an investigation runs out of time or budget with neither hypothesis proven —
+                and whether a telemetry gap should permanently cap a case's confidence, and with it the right to act.</p>
             </div>
 
             <div class="cta-track-card">
@@ -601,10 +602,10 @@
                   <path d="M18 8h4v8h-4" />
                   <path d="M10 12h8" />
                 </svg>
-                <span>MCP Tool Servers</span>
+                <span>Playbooks as data</span>
               </h5>
-              <p>Build and enhance Model Context Protocol servers connecting SecOps agents safely to native SIEM, EDR,
-                and Cloud APIs.</p>
+              <p>Whether playbooks should keep a human-readable Markdown source of truth, or move to a machine-readable
+                format that SOAR and threat-intelligence platforms can consume directly. The largest open decision.</p>
             </div>
 
             <div class="cta-track-card">
@@ -613,32 +614,34 @@
                   <circle cx="12" cy="12" r="10" />
                   <path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24" />
                 </svg>
-                <span>Range &amp; Benchmarks</span>
+                <span>Measuring what we missed</span>
               </h5>
-              <p>Create adversary emulation scenarios, synthetic telemetry sets, and evaluation tests to benchmark
-                autonomous SecOps reasoning.</p>
+              <p>Precision can be measured from your own queue; recall cannot, because the denominator is unknown.
+                Is an open corpus of scenarios with known ground truth worth building, and who would use it?</p>
             </div>
           </div>
 
           <div style="text-align: center; margin-bottom: 2rem;">
-            <a href="https://github.com/ZeroSOC/zerosoc-framework/discussions" target="_blank" rel="noopener noreferrer"
+            <!-- TODO before publishing: replace REPLACE_WITH_LINKEDIN_EVENT_URL with the live LinkedIn Event link. -->
+            <a href="REPLACE_WITH_LINKEDIN_EVENT_URL" target="_blank" rel="noopener noreferrer"
               class="btn btn-primary" style="margin-right: 0.75rem;">
-              <span>Join GitHub Discussions &amp; Pre-Register</span>
+              <span>Register for the 24 September session</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
-            <a href="https://github.com/ZeroSOC" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-              Star on GitHub
+            <a href="https://github.com/ZeroSOC/zerosoc-framework/issues" target="_blank" rel="noopener noreferrer"
+              class="btn btn-secondary">
+              Read the open questions
             </a>
           </div>
 
           <div class="cta-channels-bar">
             <div class="cta-channel-badge">
-              <span>Primary Hub</span> Working Group Slack (Launching Sept 15)
+              <span>RFCs &amp; Specs</span> GitHub Discussions &amp; Issues
             </div>
             <div class="cta-channel-badge">
-              <span>RFCs &amp; Specs</span> GitHub Discussions &amp; Issues
+              <span>Coordination</span> Working Group Slack · by invitation
             </div>
           </div>
         </div>
@@ -840,6 +843,51 @@
               </div>
             </div>
           </div>
+
+          <!-- Q8 -->
+          <div class="faq-item">
+            <button class="faq-trigger" aria-expanded="false">
+              <span>The repositories show commits authored with AI, and the prose reads like it. Was this written by a
+                machine?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            <div class="faq-content">
+              <div class="faq-body">
+                <p>
+                  <strong>Partly, and it is disclosed on purpose.</strong> Agentic coding tools are used heavily in this
+                  project: drafting specification text, restructuring documents, cross-checking internal consistency,
+                  and writing tooling. The commits carry co-authorship trailers naming the assistant because hiding
+                  that would be the wrong choice for a project whose entire subject is supervised autonomous work. If
+                  you spotted the stylistic tells in the writing, you read it correctly.
+                </p>
+                <p>
+                  <strong>What does not happen is unsupervised merging.</strong> No agent merges its own work. Every
+                  change is read and accepted by a human maintainer who is accountable for it, under the same
+                  <a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/GOVERNANCE.md" target="_blank"
+                    rel="noopener noreferrer">governance</a> that applies to any contributor. AI drafts; humans decide.
+                  That is the same boundary the framework asks security teams to hold, and it would be incoherent to
+                  demand it of a SOC while ignoring it here.
+                </p>
+                <p>
+                  This is the project's own first question (see the first entry above) applied to itself. The framework
+                  treats <strong>human readability as a conformance property</strong>, not a courtesy: a playbook that
+                  a qualified analyst cannot read and execute unaided fails, however well an agent performs it. The
+                  reasoning behind that rule is <em>"you can outsource thinking, but you cannot outsource
+                    understanding"</em> — and it binds the authors of the standard exactly as much as its users.
+                </p>
+                <p>
+                  <strong>Contributions written with AI assistance are welcome</strong>, under one condition that
+                  applies to every contribution regardless of how it was produced: it must be correct, and it must be
+                  validated by someone with real security expertise. Generated text that has never been checked against
+                  operational reality is worse than no text, because it is plausible. What this project is short of is
+                  not drafting capacity — it is practitioner judgment, which is why the working group exists.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -892,12 +940,12 @@
           <ul class="footer-links">
             <li><a href="https://github.com/ZeroSOC/zerosoc-framework" target="_blank"
                 rel="noopener noreferrer">zerosoc-framework</a></li>
-            <li><a href="https://github.com/ZeroSOC/zerosoc-platform" target="_blank"
-                rel="noopener noreferrer">zerosoc-platform</a></li>
+            <li><a href="https://github.com/ZeroSOC/zerosoc-skills" target="_blank"
+                rel="noopener noreferrer">zerosoc-skills</a></li>
             <li><a href="https://github.com/ZeroSOC/zerosoc-mcp" target="_blank"
                 rel="noopener noreferrer">zerosoc-mcp</a></li>
-            <li><a href="https://github.com/ZeroSOC/zerosoc-cyber-range" target="_blank"
-                rel="noopener noreferrer">zerosoc-cyber-range</a></li>
+            <li><span class="footer-muted">zerosoc-platform · in development</span></li>
+            <li><span class="footer-muted">zerosoc-cyber-range · planned</span></li>
           </ul>
         </div>
 
@@ -919,7 +967,7 @@
       <!-- Footer Bottom -->
       <div class="footer-bottom">
         <div>
-          Specifications, Skills, MCP Servers &amp; Cyber Range licensed under <a
+          Specifications, Skills &amp; MCP Servers licensed under <a
             href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer">Apache-2.0</a>.
           Platform licensed under <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank"
             rel="noopener noreferrer">AGPLv3</a>.

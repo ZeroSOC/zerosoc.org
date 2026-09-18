@@ -1321,3 +1321,50 @@
   }
 }
 
+
+/* ==========================================================================
+   11b. Upcoming Workstreams (not yet public)
+   Cards for workstreams that have no public repository yet: visually
+   recessed, not interactive, and carrying an explicit status tag.
+   ========================================================================== */
+.workstream-card.is-upcoming {
+  background: var(--glass-bg-subtle);
+  border-style: dashed;
+  border-color: var(--glass-border-subtle);
+  box-shadow: none;
+  cursor: default;
+}
+
+.workstream-card.is-upcoming:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--glass-border-subtle);
+  background: var(--glass-bg-subtle);
+}
+
+.workstream-card.is-upcoming .workstream-title,
+.workstream-card.is-upcoming .workstream-desc {
+  color: var(--ink-muted);
+}
+
+.workstream-card.is-upcoming svg {
+  color: var(--ink-light);
+}
+
+.tag-status {
+  background: rgba(241, 245, 249, 0.9);
+  color: var(--ink-muted);
+  border-color: var(--glass-border);
+  letter-spacing: 0.02em;
+}
+
+.workstream-status-note {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-light);
+}
+
+.footer-muted {
+  color: var(--ink-light);
+  font-size: 0.88rem;
+}
