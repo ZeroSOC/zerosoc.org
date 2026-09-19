@@ -214,17 +214,19 @@
               <div class="flow-step-name">MCP Servers</div>
               <div class="flow-step-role">Direct Native APIs</div>
             </div>
-            <div class="flow-step-arrow">→</div>
-            <div class="flow-step-node">
+            <div class="flow-step-arrow is-upcoming">→</div>
+            <div class="flow-step-node is-upcoming">
               <div class="flow-step-num">04 · Runtime</div>
               <div class="flow-step-name">Platform</div>
               <div class="flow-step-role">Execution &amp; UI Console</div>
+              <div class="flow-step-status">In development</div>
             </div>
-            <div class="flow-step-arrow">⇄</div>
-            <div class="flow-step-node">
+            <div class="flow-step-arrow is-upcoming">⇄</div>
+            <div class="flow-step-node is-upcoming">
               <div class="flow-step-num">05 · Eval</div>
               <div class="flow-step-name">Cyber Range</div>
               <div class="flow-step-role">Adversary Benchmark</div>
+              <div class="flow-step-status">Planned</div>
             </div>
           </div>
         </div>
@@ -574,11 +576,11 @@
             <div class="cta-date-badge">First Working Group Session · Thursday 24 September 2026 · 17:00 CEST</div>
             <h2>Join the ZeroSOC Working Group</h2>
             <p>
-              The framework is an open working draft maintained, today, by one practitioner. That is exactly why this
-              session exists: it needs adversarial review from people who have run real security operations. The first
-              virtual working group meeting is open to SecOps practitioners, detection engineers, incident responders
-              and security leaders — 60 minutes, in English, on Google Meet. Register on LinkedIn; the joining link is
-              posted to the event on the day.
+              The framework is an open working draft written so far by two practitioners. A standard for how
+              security operations runs needs far more than that: it has to be argued out by the people who will
+              live with it. This is the first session of the working group that does that — open to SecOps practitioners, detection engineers,
+              incident responders and security leaders. 60 minutes, in English, on Google Meet. Register on LinkedIn;
+              the joining link is posted to the event on the day.
             </p>
           </div>
 
@@ -622,8 +624,7 @@
           </div>
 
           <div style="text-align: center; margin-bottom: 2rem;">
-            <!-- TODO before publishing: replace REPLACE_WITH_LINKEDIN_EVENT_URL with the live LinkedIn Event link. -->
-            <a href="REPLACE_WITH_LINKEDIN_EVENT_URL" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/events/7506782391185727489/" target="_blank" rel="noopener noreferrer"
               class="btn btn-primary" style="margin-right: 0.75rem;">
               <span>Register for the 24 September session</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -847,7 +848,7 @@
           <!-- Q8 -->
           <div class="faq-item">
             <button class="faq-trigger" aria-expanded="false">
-              <span>The repositories show commits authored with AI, and the prose reads like it. Was this written by a
+              <span>Some commits are authored by an AI, and the prose reads like it. Is this written by a
                 machine?</span>
               <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 aria-hidden="true">
@@ -857,33 +858,21 @@
             <div class="faq-content">
               <div class="faq-body">
                 <p>
-                  <strong>Partly, and it is disclosed on purpose.</strong> Agentic coding tools are used heavily in this
-                  project: drafting specification text, restructuring documents, cross-checking internal consistency,
-                  and writing tooling. The commits carry co-authorship trailers naming the assistant because hiding
-                  that would be the wrong choice for a project whose entire subject is supervised autonomous work. If
-                  you spotted the stylistic tells in the writing, you read it correctly.
+                  <strong>Partly, and the commits say so deliberately.</strong> Agentic coding tools drafted a good
+                  deal of the specifications and most of the tooling. If you spotted the stylistic tells, you read it
+                  correctly.
                 </p>
                 <p>
-                  <strong>What does not happen is unsupervised merging.</strong> No agent merges its own work. Every
-                  change is read and accepted by a human maintainer who is accountable for it, under the same
-                  <a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/GOVERNANCE.md" target="_blank"
-                    rel="noopener noreferrer">governance</a> that applies to any contributor. AI drafts; humans decide.
-                  That is the same boundary the framework asks security teams to hold, and it would be incoherent to
-                  demand it of a SOC while ignoring it here.
+                  <strong>What never happens is unsupervised merging.</strong> No agent merges its own work. A human
+                  maintainer reads every change and is accountable for it. AI drafts, humans decide — the same
+                  boundary this framework asks of a SOC, and it would be incoherent to demand it of your analysts but
+                  not of ourselves. That is the first question on this page, applied to us.
                 </p>
                 <p>
-                  This is the project's own first question (see the first entry above) applied to itself. The framework
-                  treats <strong>human readability as a conformance property</strong>, not a courtesy: a playbook that
-                  a qualified analyst cannot read and execute unaided fails, however well an agent performs it. The
-                  reasoning behind that rule is <em>"you can outsource thinking, but you cannot outsource
-                    understanding"</em> — and it binds the authors of the standard exactly as much as its users.
-                </p>
-                <p>
-                  <strong>Contributions written with AI assistance are welcome</strong>, under one condition that
-                  applies to every contribution regardless of how it was produced: it must be correct, and it must be
-                  validated by someone with real security expertise. Generated text that has never been checked against
-                  operational reality is worse than no text, because it is plausible. What this project is short of is
-                  not drafting capacity — it is practitioner judgment, which is why the working group exists.
+                  AI-assisted contributions are welcome on one condition, which is the condition for all of them:
+                  someone with real security expertise has verified it is correct. Generated text is fluent by
+                  default, so a wrong answer is harder to catch, not easier. This project is not short of drafting
+                  speed. It is short of practitioner judgment.
                 </p>
               </div>
             </div>

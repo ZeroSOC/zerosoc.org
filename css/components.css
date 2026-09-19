@@ -1368,3 +1368,43 @@
   color: var(--ink-light);
   font-size: 0.88rem;
 }
+
+/* Upcoming nodes in the ecosystem flow bar (no public repository yet) */
+.flow-step-node.is-upcoming {
+  background: rgba(248, 250, 252, 0.5);
+  border-style: dashed;
+  border-color: var(--glass-border-subtle);
+}
+
+.flow-step-node.is-upcoming:hover {
+  border-color: var(--glass-border-subtle);
+  background: rgba(248, 250, 252, 0.5);
+  transform: none;
+  box-shadow: none;
+}
+
+.flow-step-node.is-upcoming .flow-step-num {
+  color: var(--ink-light);
+}
+
+.flow-step-node.is-upcoming .flow-step-name {
+  color: var(--ink-muted);
+}
+
+.flow-step-node.is-upcoming .flow-step-role {
+  color: var(--ink-light);
+}
+
+.flow-step-arrow.is-upcoming {
+  color: var(--ink-light);
+  opacity: 0.55;
+}
+
+.flow-step-status {
+  margin-top: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-light);
+}
