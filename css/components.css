@@ -1408,3 +1408,15 @@
   letter-spacing: 0.06em;
   color: var(--ink-light);
 }
+
+/* Banner image at the head of the working group CTA card */
+.cta-banner-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 572;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  margin-bottom: 1.75rem;
+}
