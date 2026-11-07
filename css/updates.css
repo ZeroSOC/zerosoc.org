@@ -1,0 +1,204 @@
+/**
+ * ZeroSOC.org - Updates (project and working group posts)
+ * License: Apache-2.0
+ */
+
+.updates-page {
+  padding-top: calc(var(--header-height) + 3rem);
+}
+
+.nav-link.active {
+  color: var(--blue-primary);
+}
+
+/* Post list */
+.updates-list {
+  max-width: 46rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.update-card {
+  display: block;
+  padding: 1.5rem 1.75rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.update-card:hover {
+  border-color: var(--blue-border);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+.update-card h2 {
+  font-size: 1.3rem;
+  margin: 0.4rem 0 0.5rem;
+}
+
+.update-card p {
+  font-size: 0.95rem;
+}
+
+.update-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.04em;
+}
+
+.update-more {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--blue-primary);
+}
+
+/* Single post */
+.post {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.post-back {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.post-back:hover {
+  color: var(--blue-primary);
+}
+
+.post-header {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.post-header h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin: 0.75rem 0 1rem;
+}
+
+.post-lede {
+  font-size: 1.1rem;
+  color: var(--ink-body);
+}
+
+.post-body h2 {
+  font-size: 1.45rem;
+  margin: 2.75rem 0 0.85rem;
+}
+
+.post-body p,
+.post-body ul,
+.post-body ol {
+  margin-bottom: 1rem;
+}
+
+.post-body ul,
+.post-body ol {
+  padding-left: 1.4rem;
+}
+
+.post-body li {
+  margin-bottom: 0.4rem;
+}
+
+.post-body a {
+  color: var(--blue-primary);
+}
+
+.post-body code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  padding: 0.1rem 0.35rem;
+  background: var(--blue-soft);
+  border-radius: 4px;
+  color: var(--ink-heading);
+}
+
+.post-figure {
+  margin: 2rem -2rem;
+  padding: 1.5rem;
+  background: var(--glass-bg-elevated);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow);
+}
+
+.post-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.post-figure figcaption {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.gate-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0 !important;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.gate-strip li {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-pill);
+  background: var(--glass-bg);
+  color: var(--ink-heading);
+}
+
+.gate-strip li.gate-open {
+  border-color: var(--orange-border);
+  background: var(--orange-soft);
+  color: var(--orange-hover);
+}
+
+.post-callout {
+  margin: 2.5rem 0 0;
+  padding: 1.5rem 1.75rem;
+  background: var(--blue-soft);
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-lg);
+}
+
+.post-callout h2 {
+  margin-top: 0;
+}
+
+.post-callout ul {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .post-figure {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0.75rem;
+    overflow-x: auto;
+  }
+
+  .post-figure svg {
+    min-width: 640px;
+  }
+}

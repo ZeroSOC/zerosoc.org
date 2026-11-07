@@ -17,14 +17,19 @@ ZeroSOC.org is designed with a **Light Blueprint Glass Box** aesthetic, serving 
 ```
 zerosoc.org/
 ├── index.html                   # Main landing page
+├── updates/                     # Project and working group posts
+│   ├── index.html               # Post list (add a card per new post, newest first)
+│   └── YYYY-MM-DD-<slug>.html   # One self-contained page per post
 ├── css/
 │   ├── tokens.css               # Light blueprint design tokens (colors, typography, grid)
 │   ├── layout.css               # Grid systems, responsive frames, typography base
-│   └── components.css           # Glass cards, HUD header, pipeline diagram, FAQ accordion
+│   ├── components.css           # Glass cards, HUD header, pipeline diagram, FAQ accordion
+│   └── updates.css              # Post list and post page styles
 ├── js/
 │   ├── pipeline-explorer.js     # Interactive state switcher for Lifecycle Phases & G1-G5 Gates
 │   └── main.js                  # Navigation scrolling, mobile menu, FAQ accordion logic
 ├── assets/
+│   ├── verdict_structure.svg    # Verdict structure diagram (inlined in the 2026-11-05 post)
 │   ├── zerosoc_logo.png         # Official ZeroSOC brand logo
 │   ├── favicon.svg              # Vector SVG favicon
 │   ├── favicon.png              # PNG favicon (64x64)

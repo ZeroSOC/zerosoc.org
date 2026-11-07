@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 490" role="img" aria-labelledby="vs-title vs-desc">
+  <title id="vs-title">Proposed verdict structure for a closed Case</title>
+  <desc id="vs-desc">Decision tree. Was the activity malicious? If not, and the rule did not work as designed, the Case is a False Positive (verdict_id 1). If not, and the rule worked as designed, it is a Benign Positive (verdict_id 5). If it was malicious, the verdict is True Positive (verdict_id 2), and the question is whether it reached the environment: if not, it is a Near-miss with severity_id 1, closed and tracked; if it did, it is an Incident with severity_id 2 to 5 and needs a response. The proposal gives False Positives and Benign Positives severity_id 1 too.</desc>
+  <style>
+    .q { font: 600 16px 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; fill: #0f172a; }
+    .t { font: 700 17px 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+    .m { font: 500 13px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #0f172a; }
+    .mm { font: 500 12px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #64748b; }
+    .b { font: 400 13px 'Inter', 'Segoe UI', system-ui, sans-serif; fill: #334155; }
+    .a { font: 600 13px 'Inter', 'Segoe UI', system-ui, sans-serif; }
+    .lbl { font: 600 12px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #64748b; }
+    .grp { font: 600 11px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #2563eb; letter-spacing: 0.06em; }
+    .ln { fill: none; stroke: #94a3b8; stroke-width: 1.5; }
+  </style>
+
+  <!-- True Positive group -->
+  <rect x="479" y="104" width="477" height="380" rx="14" fill="rgba(37,99,235,0.04)" stroke="#2563eb" stroke-opacity="0.45" stroke-dasharray="6 5"/>
+  <text x="498" y="126" class="grp">TRUE POSITIVE · verdict_id 2</text>
+
+  <!-- Connectors -->
+  <path class="ln" d="M480 68 V96 H240 V140 M480 96 H720 V140"/>
+  <path class="ln" d="M240 192 V220 H120 V250 M240 220 H360 V250"/>
+  <path class="ln" d="M720 192 V220 H600 V250 M720 220 H840 V250"/>
+  <text x="360" y="89" text-anchor="middle" class="lbl">no</text>
+  <text x="600" y="89" text-anchor="middle" class="lbl">yes</text>
+  <text x="180" y="213" text-anchor="middle" class="lbl">no</text>
+  <text x="300" y="213" text-anchor="middle" class="lbl">yes</text>
+  <text x="660" y="213" text-anchor="middle" class="lbl">no</text>
+  <text x="780" y="213" text-anchor="middle" class="lbl">yes</text>
+
+  <!-- Questions -->
+  <rect x="300" y="16" width="360" height="52" rx="26" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+  <text x="480" y="47" text-anchor="middle" class="q">Was the activity malicious?</text>
+  <rect x="90" y="140" width="300" height="52" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="240" y="171" text-anchor="middle" class="q">Did the rule work as designed?</text>
+  <rect x="570" y="140" width="300" height="52" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="720" y="171" text-anchor="middle" class="q">Did it reach the environment?</text>
+
+  <!-- False Positive -->
+  <g transform="translate(10 250)">
+    <rect width="220" height="220" rx="12" fill="#ffffff" stroke="#64748b" stroke-opacity="0.5"/>
+    <path d="M0 12 a12 12 0 0 1 12 -12 h196 a12 12 0 0 1 12 12 v32 h-220 z" fill="rgba(100,116,139,0.12)"/>
+    <text x="16" y="28" class="t" fill="#475569">False Positive</text>
+    <text x="16" y="70" class="m">verdict_id  1</text>
+    <text x="16" y="92" class="m">severity_id 1 <tspan class="mm">proposed</tspan></text>
+    <line x1="16" y1="108" x2="204" y2="108" stroke="#e2e8f0"/>
+    <text class="b"><tspan x="16" y="130">Flawed detection logic</tspan><tspan x="16" y="148">misread normal activity</tspan><tspan x="16" y="166">as malicious.</tspan></text>
+    <text x="16" y="202" class="a" fill="#475569">→ Tune the rule</text>
+  </g>
+
+  <!-- Benign Positive -->
+  <g transform="translate(250 250)">
+    <rect width="220" height="220" rx="12" fill="#ffffff" stroke="#16a34a" stroke-opacity="0.5"/>
+    <path d="M0 12 a12 12 0 0 1 12 -12 h196 a12 12 0 0 1 12 12 v32 h-220 z" fill="rgba(22,163,74,0.10)"/>
+    <text x="16" y="28" class="t" fill="#15803d">Benign Positive</text>
+    <text x="16" y="70" class="m">verdict_id  5</text>
+    <text x="16" y="92" class="m">severity_id 1 <tspan class="mm">proposed</tspan></text>
+    <line x1="16" y1="108" x2="204" y2="108" stroke="#e2e8f0"/>
+    <text class="b"><tspan x="16" y="130">Legitimate activity, such</tspan><tspan x="16" y="148">as an authorised pentest,</tspan><tspan x="16" y="166">hit a valid rule.</tspan></text>
+    <text x="16" y="202" class="a" fill="#15803d">→ Close, record the exception</text>
+  </g>
+
+  <!-- Near-miss -->
+  <g transform="translate(490 250)">
+    <rect width="220" height="220" rx="12" fill="#ffffff" stroke="#2563eb" stroke-opacity="0.5"/>
+    <path d="M0 12 a12 12 0 0 1 12 -12 h196 a12 12 0 0 1 12 12 v32 h-220 z" fill="rgba(37,99,235,0.10)"/>
+    <text x="16" y="28" class="t" fill="#1d4ed8">Near-miss</text>
+    <text x="16" y="70" class="m">verdict_id  2</text>
+    <text x="16" y="92" class="m">severity_id 1</text>
+    <line x1="16" y1="108" x2="204" y2="108" stroke="#e2e8f0"/>
+    <text class="b"><tspan x="16" y="130">Stopped before it reached</tspan><tspan x="16" y="148">the environment: at a mail</tspan><tspan x="16" y="166">or web gateway, in a sandbox.</tspan></text>
+    <text x="16" y="202" class="a" fill="#1d4ed8">→ Close, no remediation, track</text>
+  </g>
+
+  <!-- Incident -->
+  <g transform="translate(730 250)">
+    <rect width="220" height="220" rx="12" fill="#ffffff" stroke="#ea580c" stroke-opacity="0.6" stroke-width="1.5"/>
+    <path d="M0 12 a12 12 0 0 1 12 -12 h196 a12 12 0 0 1 12 12 v32 h-220 z" fill="rgba(234,88,12,0.12)"/>
+    <text x="16" y="28" class="t" fill="#c2410c">Incident</text>
+    <text x="16" y="70" class="m">verdict_id  2</text>
+    <text x="16" y="92" class="m">severity_id 2–5</text>
+    <line x1="16" y1="108" x2="204" y2="108" stroke="#e2e8f0"/>
+    <text class="b"><tspan x="16" y="130">Reached the environment</tspan><tspan x="16" y="148">and can cause harm.</tspan></text>
+    <text x="16" y="202" class="a" fill="#c2410c">→ Respond</text>
+  </g>
+</svg>

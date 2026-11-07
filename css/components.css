@@ -81,6 +81,7 @@
   text-decoration: none;
   transition: color var(--transition-fast);
   padding: 0.35rem 0.5rem;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -1255,26 +1256,8 @@
   }
 }
 
-@media (max-width: 768px) {
-  .whys-grid {
-    grid-template-columns: 1fr;
-  }
-  .ecosystem-workstreams-grid {
-    grid-template-columns: 1fr;
-  }
-  .ecosystem-flow-bar {
-    flex-direction: column;
-  }
-  .flow-step-node {
-    width: 100%;
-  }
-  .flow-step-arrow {
-    transform: rotate(90deg);
-    margin: 0.25rem 0;
-  }
-  .cta-banner-card {
-    padding: 2rem 1.5rem;
-  }
+/* The seven navigation links need ~1240px; below that they move to the drawer */
+@media (max-width: 1240px) {
   .nav-links {
     display: none;
     position: absolute;
@@ -1295,6 +1278,28 @@
   
   .mobile-menu-toggle {
     display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .whys-grid {
+    grid-template-columns: 1fr;
+  }
+  .ecosystem-workstreams-grid {
+    grid-template-columns: 1fr;
+  }
+  .ecosystem-flow-bar {
+    flex-direction: column;
+  }
+  .flow-step-node {
+    width: 100%;
+  }
+  .flow-step-arrow {
+    transform: rotate(90deg);
+    margin: 0.25rem 0;
+  }
+  .cta-banner-card {
+    padding: 2rem 1.5rem;
   }
   
   .pipeline-diagram {

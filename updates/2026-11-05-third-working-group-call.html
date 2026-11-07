@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Third Working Group call — ZeroSOC.org</title>
+  <meta name="description" content="Recap of the third ZeroSOC Working Group call on 5 November 2026: OCSF UID 984, community governance, a proposed verdict structure for near-misses and incidents, where MTTR stops, and a live platform demo.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Third Working Group call — ZeroSOC.org">
+  <meta property="og:description" content="Recap of the third ZeroSOC Working Group call on 5 November 2026: OCSF UID 984, community governance, a proposed verdict structure for near-misses and incidents, where MTTR stops, and a live platform demo.">
+  <meta property="og:url" content="https://zerosoc.org/updates/2026-11-05-third-working-group-call.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon.png">
+  <link rel="alternate icon" href="../assets/favicon.ico">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/updates.css">
+</head>
+
+<body>
+
+  <!-- Blueprint Registration Frame & Stamp -->
+  <div class="blueprint-frame" aria-hidden="true"></div>
+  <div class="dwg-stamp" aria-hidden="true">DOC: ZEROSOC-ECOSYSTEM-SPEC | OPEN WORKING DRAFT | APACHE-2.0 &amp; AGPLv3</div>
+
+  <!-- 1. HUD Navigation Header -->
+  <header class="hud-header">
+    <div class="container nav-container">
+      <a href="../" class="nav-brand" aria-label="ZeroSOC.org Home">
+        <img src="../assets/zerosoc_logo.png" alt="ZeroSOC Logo" class="brand-logo-img">
+        <span class="brand-badge">v0.1 Draft</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../#mission" class="nav-link">Mission &amp; Philosophy</a></li>
+          <li><a href="../#ecosystem" class="nav-link">Ecosystem Architecture</a></li>
+          <li><a href="../#framework" class="nav-link">Framework</a></li>
+          <li><a href="../#platform" class="nav-link">Platform</a></li>
+          <li><a href="../#cta" class="nav-link">Community CTA</a></li>
+          <li><a href="./" class="nav-link active" aria-current="page">Updates</a></li>
+          <li><a href="../#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/ZeroSOC" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm"
+          aria-label="ZeroSOC on GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="updates-page">
+    <div class="container">
+      <article class="post">
+        <a href="./" class="post-back">← All updates</a>
+
+        <header class="post-header">
+          <div class="update-meta">
+            <time datetime="2026-11-05">5 November 2026</time>
+            <span class="tag blue">Working Group</span>
+          </div>
+          <h1>Third Working Group call: verdicts, governance and when an incident ends</h1>
+          <p class="post-lede">
+            The ZeroSOC Working Group met online on Thursday 5 November for its third call, with two members joining
+            for the first time. We covered the OCSF extension, how the project will be governed, where a near-miss
+            ends and an incident begins, and when response time should stop counting. We closed with a live demo.
+          </p>
+        </header>
+
+        <div class="post-body">
+          <h2>OCSF reserved UID 984 for ZeroSOC</h2>
+          <p>
+            Our request was merged into the official OCSF registry, so UID 984 now belongs to the ZeroSOC extension.
+            The extension adds a field only where OCSF has no concept of its own, and Cases are correlated through
+            OCSF's <code>correlation_uid</code>. Staying close to the public schema also pays off for AI agents:
+            a model that already knows OCSF can read ZeroSOC records without extra prompting.
+          </p>
+
+          <h2>From one maintainer to community governance</h2>
+          <p>The project is moving to an open, community-governed model. The proposed rules for changes:</p>
+          <ul>
+            <li><strong>Everyday changes</strong> (editorial fixes, drafts, edits to development documents) can be
+              merged by a maintainer once the automated checks are green.</li>
+            <li><strong>Decisions</strong> (design decisions on development or stable documents, governance changes)
+              start with an issue, then a pull request that stays open for 72 hours with every objection
+              addressed.</li>
+            <li><strong>Promotion to stable</strong>, when a document becomes binding for conformance, needs maturity
+              checks and a review by someone other than the author.</li>
+          </ul>
+          <p>
+            We are looking for maintainers: people who review pull requests, help settle disagreements and cut
+            releases. If you would like to take this on, tell us on Slack.
+          </p>
+
+          <h2>Near-miss or incident?</h2>
+          <p>
+            The group discussed a single threshold question: <em>did the malicious activity reach the
+            environment?</em> If it did and can cause harm, it is an Incident and needs a response. If it was stopped
+            before, at a mail or web gateway or inside a sandbox, it is a Near-miss: the Case closes without
+            remediation and stays on record. Both carry the True Positive verdict; severity tells them apart.
+          </p>
+
+          <figure class="post-figure">
+            <svg viewBox="0 0 960 490" role="img" aria-labelledby="vs-title vs-desc">
+              <title id="vs-title">Proposed verdict structure for a closed Case</title>
+              <desc id="vs-desc">Decision tree. Was the activity malicious? If not, and the rule did not work as designed, the Case is a False Positive (verdict_id 1). If not, and the rule worked as designed, it is a Benign Positive (verdict_id 5). If it was malicious, the verdict is True Positive (verdict_id 2), and the question is whether it reached the environment: if not, it is a Near-miss with severity_id 1, closed and tracked; if it did, it is an Incident with severity_id 2 to 5 and needs a response. The proposal gives False Positives and Benign Positives severity_id 1 too.</desc>
+              <style>
+                .q { font: 600 16px 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; fill: #0f172a; }
+                .t { font: 700 17px 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
+                .m { font: 500 13px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #0f172a; }
+                .mm { font: 500 12px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #64748b; }
+                .b { font: 400 13px 'Inter', 'Segoe UI', system-ui, sans-serif; fill: #334155; }
+                .a { font: 600 13px 'Inter', 'Segoe UI', system-ui, sans-serif; }
+                .lbl { font: 600 12px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #64748b; }
+                .grp { font: 600 11px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #2563eb; letter-spacing: 0.06em; }
+                .ln { fill: none; stroke: #94a3b8; stroke-width: 1.5; }
+              </style>
+
+              <!-- True Positive group -->
+              <rect x="479" y="104" width="477" height="380" rx="14" fill="rgba(37,99,235,0.04)" stroke="#2563eb" stroke-opacity="0.45" stroke-dasharray="6 5"/>
+              <text x="498" y="126" class="grp">TRUE POSITIVE · verdict_id 2</text>
+
+              <!-- Connectors -->
+              <path class="ln" d="M480 68 V96 H240 V140 M480 96 H720 V140"/>
+              <path class="ln" d="M240 192 V220 H120 V250 M240 220 H360 V250"/>
+              <path class="ln" d="M720 192 V220 H600 V250 M720 220 H840 V250"/>
+              <text x="360" y="89" text-anchor="middle" class="lbl">no</text>
+              <text x="600" y="89" text-anchor="middle" class="lbl">yes</text>
+              <text x="180" y="213" text-anchor="middle" class="lbl">no</text>
+              <text x="300" y="213" text-anchor="middle" class="lbl">yes</text>
+              <text x="660" y="213" text-anchor="middle" class="lbl">no</text>
+              <text x="780" y="213" text-anchor="middle" class="lbl">yes</text>
+
+              <!-- Questions -->
+              <rect x="300" y="16" width="360" height="52" rx="26" fill="#ffffff" stroke="#0f172a" stroke-width="1.5"/>
+              <text x="480" y="47" text-anchor="middle" class="q">Was the activity malicious?</text>
+              <rect x="90" y="140" width="300" height="52" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+              <text x="240" y="171" text-anchor="middle" class="q">Did the rule work as designed?</text>
+              <rect x="570" y="140" width="300" height="52" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+              <text x="720" y="171" text-anchor="middle" class="q">Did it reach the environment?</text>
+
+              <!-- False Positive -->
+              <g transform="translate(10 250)">
+                <rect width="220" height="220" rx="12" fill="#ffffff" stroke="#64748b" stroke-opacity="0.5"/>
+                <path d="M0 12 a12 12 0 0 1 12 -12 h196 a12 12 0 0 1 12 12 v32 h-220 z" fill="rgba(100,116,139,0.12)"/>
+                <text x="16" y="28" class="t" fill="#475569">False Positive</text>
+                <text x="16" y="70" class="m">verdict_id  1</text>
+                <text x="16" y="92" class="m">severity_id 1 <tspan class="mm">proposed</tspan></text>
+                <line x1="16" y1="108" x2="204" y2="108" stroke="#e2e8f0"/>
+                <text class="b"><tspan x="16" y="130">Flawed detection logic</tspan><tspan x="16" y="148">misread normal activity</tspan><tspan x="16" y="166">as malicious.</tspan></text>
+                <text x="16" y="202" class="a" fill="#475569">→ Tune the rule</text>
+              </g>
+
+              <!-- Benign Positive -->
+              <g transform="translate(250 250)">
+                <rect width="220" height="220" rx="12" fill="#ffffff" stroke="#16a34a" stroke-opacity="0.5"/>
+                <path d="M0 12 a12 12 0 0 1 12 -12 h196 a12 12 0 0 1 12 12 v32 h-220 z" fill="rgba(22,163,74,0.10)"/>
+                <text x="16" y="28" class="t" fill="#15803d">Benign Positive</text>
+                <text x="16" y="70" class="m">verdict_id  5</text>
+                <text x="16" y="92" class="m">severity_id 1 <tspan class="mm">proposed</tspan></text>
+                <line x1="16" y1="108" x2="204" y2="108" stroke="#e2e8f0"/>
+                <text class="b"><tspan x="16" y="130">Legitimate activity, such</tspan><tspan x="16" y="148">as an authorised pentest,</tspan><tspan x="16" y="166">hit a valid rule.</tspan></text>
+                <text x="16" y="202" class="a" fill="#15803d">→ Close, record the exception</text>
+              </g>
+
+              <!-- Near-miss -->
+              <g transform="translate(490 250)">
+                <rect width="220" height="220" rx="12" fill="#ffffff" stroke="#2563eb" stroke-opacity="0.5"/>
+                <path d="M0 12 a12 12 0 0 1 12 -12 h196 a12 12 0 0 1 12 12 v32 h-220 z" fill="rgba(37,99,235,0.10)"/>
+                <text x="16" y="28" class="t" fill="#1d4ed8">Near-miss</text>
+                <text x="16" y="70" class="m">verdict_id  2</text>
+                <text x="16" y="92" class="m">severity_id 1</text>
+                <line x1="16" y1="108" x2="204" y2="108" stroke="#e2e8f0"/>
+                <text class="b"><tspan x="16" y="130">Stopped before it reached</tspan><tspan x="16" y="148">the environment: at a mail</tspan><tspan x="16" y="166">or web gateway, in a sandbox.</tspan></text>
+                <text x="16" y="202" class="a" fill="#1d4ed8">→ Close, no remediation, track</text>
+              </g>
+
+              <!-- Incident -->
+              <g transform="translate(730 250)">
+                <rect width="220" height="220" rx="12" fill="#ffffff" stroke="#ea580c" stroke-opacity="0.6" stroke-width="1.5"/>
+                <path d="M0 12 a12 12 0 0 1 12 -12 h196 a12 12 0 0 1 12 12 v32 h-220 z" fill="rgba(234,88,12,0.12)"/>
+                <text x="16" y="28" class="t" fill="#c2410c">Incident</text>
+                <text x="16" y="70" class="m">verdict_id  2</text>
+                <text x="16" y="92" class="m">severity_id 2–5</text>
+                <line x1="16" y1="108" x2="204" y2="108" stroke="#e2e8f0"/>
+                <text class="b"><tspan x="16" y="130">Reached the environment</tspan><tspan x="16" y="148">and can cause harm.</tspan></text>
+                <text x="16" y="202" class="a" fill="#c2410c">→ Respond</text>
+              </g>
+            </svg>
+            <figcaption>
+              Proposed verdict structure, under discussion on
+              <a href="https://github.com/ZeroSOC/zerosoc-framework/issues/3" target="_blank" rel="noopener noreferrer">issue #3</a>.
+              Values are OCSF <code>verdict_id</code> and <code>severity_id</code>; severity 1 is Informational.
+            </figcaption>
+          </figure>
+
+          <p>
+            One participant proposed giving False Positives and Benign Positives <code>severity_id</code> 1 as well,
+            and keeping 2 to 5 for Incidents only. An automated triage then has one simple rule: anything above
+            Informational is a real incident. We also want a decision matrix that draws the boundaries between
+            near-miss, impact and benign activity more formally.
+          </p>
+
+          <h2>Early containment and where MTTR stops</h2>
+          <p>
+            Should High and Critical Cases allow containment before the Incident is declared, while the investigation
+            is still testing its hypotheses? The idea on the table is bounded: only pre-authorised, reversible actions,
+            such as a conditional access change or isolating a device, instead of waiting for the formal declaration.
+          </p>
+          <p>We then walked through the seven operational gates of a Case:</p>
+          <ul class="gate-strip" aria-label="Operational gates">
+            <li>G1 Received</li>
+            <li>G2 Triage disposition</li>
+            <li>G3 Incident declared</li>
+            <li>G4 First containment</li>
+            <li class="gate-open">G5 Eradication verified</li>
+            <li class="gate-open">G6 Recovery complete</li>
+            <li class="gate-open">G7 Case closed</li>
+          </ul>
+          <p>
+            The open question is where Mean Time to Respond stops: at G5 when the threat is eradicated, at G6 when
+            services are restored and containment is lifted, or at G7 when the Case closes after the post-incident
+            review. The industry has no shared definition of MTTD, triage time or MTTR, which is why published
+            figures are so hard to compare.
+          </p>
+
+          <h2>Live demo of the reference platform</h2>
+          <p>
+            We closed with an end-to-end run of the open-source reference platform on Azure. It orchestrates its
+            workflows with LangGraph and calls models through Azure AI Foundry, held in place by deterministic playbook
+            guardrails. It is built in layers: the framework specifications, the agent skills, the MCP servers and the
+            execution engine. Attacks are simulated in a cyber range on Azure VMs with Caldera and Atomic Red Team.
+          </p>
+          <p>
+            An Atomic Red Team scenario (a phishing macro launching PowerShell and further binaries) ran on a VM
+            monitored by Microsoft Defender. ZeroSOC picked up the Defender alert, finished triage within a minute,
+            correlated across the process trees within two, proposed isolating the device and posted the alert to
+            Microsoft Teams. When new evidence arrived, it re-evaluated the Case, updated the verdict and kept the
+            full audit trail.
+          </p>
+          <p>
+            The <a href="https://github.com/ZeroSOC/zerosoc-mcp" target="_blank" rel="noopener noreferrer">MCP servers</a>
+            and <a href="https://github.com/ZeroSOC/zerosoc-skills" target="_blank" rel="noopener noreferrer">agent skills</a>
+            are already public. Active members who want to look at the platform code can ask for access.
+          </p>
+
+          <section class="post-callout" aria-labelledby="next-steps">
+            <h2 id="next-steps">How to take part</h2>
+            <ul>
+              <li>Comment on the near-miss proposal and the severity mapping in
+                <a href="https://github.com/ZeroSOC/zerosoc-framework/issues/3" target="_blank" rel="noopener noreferrer">issue #3</a>
+                by Tuesday 10 November.</li>
+              <li>Tell us where MTTR should stop in
+                <a href="https://github.com/ZeroSOC/zerosoc-framework/issues/85" target="_blank" rel="noopener noreferrer">issue #85</a>.</li>
+              <li>Volunteer as a maintainer or reviewer on the Working Group Slack.</li>
+              <li>Not in the group yet? Email
+                <a href="mailto:marco@zerosoc.org?subject=Joining%20the%20ZeroSOC%20Working%20Group">marco@zerosoc.org</a>
+                with a few lines about your experience.</li>
+            </ul>
+          </section>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <!-- Standards Alignment Grid -->
+      <div class="standards-section">
+        <div class="standards-heading">Aligned with Global Security &amp; Data Standards</div>
+        <div class="standards-badges">
+          <span class="standards-pill">NIST CSF 2.0</span>
+          <span class="standards-pill">NIST SP 800-61 Rev. 3</span>
+          <span class="standards-pill">ISO/IEC 27035</span>
+          <span class="standards-pill">OCSF Schema</span>
+          <span class="standards-pill">MITRE ATT&amp;CK®</span>
+          <span class="standards-pill">NIS2 &amp; DORA Auditing</span>
+        </div>
+      </div>
+
+      <!-- Footer Links Grid -->
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.75rem;">
+            <img src="../assets/zerosoc_logo.png" alt="ZeroSOC Logo" style="height:26px; width:auto;">
+          </div>
+          <p>
+            An open, vendor-independent standard for Autonomous Security Operations. Democratizing autonomous defense
+            through transparent, community-governed engineering.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Specifications</h5>
+          <ul class="footer-links">
+            <li><a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/01-Foundation/framework_manifest.md"
+                target="_blank" rel="noopener noreferrer">Framework Manifest</a></li>
+            <li><a href="https://github.com/ZeroSOC/zerosoc-framework/tree/main/04-Playbooks" target="_blank"
+                rel="noopener noreferrer">Playbook Catalog</a></li>
+            <li><a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/02-Taxonomy/alert_types.md"
+                target="_blank" rel="noopener noreferrer">Alert Taxonomy</a></li>
+            <li><a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/05-Metrics/operational_metrics.md"
+                target="_blank" rel="noopener noreferrer">Operational Metrics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Ecosystem</h5>
+          <ul class="footer-links">
+            <li><a href="https://github.com/ZeroSOC/zerosoc-framework" target="_blank"
+                rel="noopener noreferrer">zerosoc-framework</a></li>
+            <li><a href="https://github.com/ZeroSOC/zerosoc-skills" target="_blank"
+                rel="noopener noreferrer">zerosoc-skills</a></li>
+            <li><a href="https://github.com/ZeroSOC/zerosoc-mcp" target="_blank"
+                rel="noopener noreferrer">zerosoc-mcp</a></li>
+            <li><span class="footer-muted">zerosoc-platform · in development</span></li>
+            <li><span class="footer-muted">zerosoc-cyber-range · planned</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Community &amp; Governance</h5>
+          <ul class="footer-links">
+            <li><a href="./">Project Updates</a></li>
+            <li><a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/CONTRIBUTING.md" target="_blank"
+                rel="noopener noreferrer">Contributing Guide</a></li>
+            <li><a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/GOVERNANCE.md" target="_blank"
+                rel="noopener noreferrer">Project Governance</a></li>
+            <li><a href="https://github.com/ZeroSOC/zerosoc-framework/blob/main/CODE_OF_CONDUCT.md" target="_blank"
+                rel="noopener noreferrer">Code of Conduct</a></li>
+            <li><a href="https://github.com/ZeroSOC/zerosoc-framework/discussions" target="_blank"
+                rel="noopener noreferrer">GitHub Discussions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          Specifications, Skills &amp; MCP Servers licensed under <a
+            href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer">Apache-2.0</a>.
+          Platform licensed under <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank"
+            rel="noopener noreferrer">AGPLv3</a>.
+        </div>
+        <div>
+          ZeroSOC is an independent, community-governed open-source initiative.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
