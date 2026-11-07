@@ -1,12 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 290" role="img" aria-labelledby="gt-title gt-desc">
-  <title id="gt-title">Proposed operational gates of a Case</title>
-  <desc id="gt-desc">Timeline of seven gates. Detection and Analysis: triage runs from G1 Received to G2 Triage disposition, investigation from G2 to G3 Incident declared. Response: containment runs from G3 to G4 First containment, eradication from G4 to G5 Eradication verified, recovery from G5 to G6 Recovery complete. Post-incident: the review runs from G6 to G7 Case closed. Two open questions: early containment for High and Critical Cases between G2 and G3, and whether MTTR stops at G5, G6 or G7.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" role="img" aria-labelledby="gt-title gt-desc">
+  <title id="gt-title">Proposed gates of a Case and the metrics they anchor</title>
+  <desc id="gt-desc">Timeline from T0, the first malicious event, through G1 Alerts received, G2 Triage disposition, G3 Incident declared, G4 First containment, G5 Eradication verified, G6 Recovery complete and G7 Case closed. The phases between them are detection, triage, investigation, containment, eradication, recovery and lessons learned. MTTD runs from T0 to G1. MTTI runs from G1 to G2, or to G3. MTTC runs from G1 to G4; whether it should start at T0 instead is open. MTTR starts at G1 and stops at G4, G5 or G6; which one is open.</desc>
   <style>
-    .ph { font: 600 13px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; letter-spacing: 0.06em; }
-    .seg { font: 600 14px 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; fill: #334155; }
-    .g { font: 700 13px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; }
-    .gl { font: 500 13px 'Inter', 'Segoe UI', system-ui, sans-serif; fill: #0f172a; }
-    .qq { font: 600 13px 'Inter', 'Segoe UI', system-ui, sans-serif; }
+    .seg { font: 600 14px 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; fill: #475569; font-style: italic; }
+    .g { font: 700 12px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; }
+    .gl { font: 500 12.5px 'Inter', 'Segoe UI', system-ui, sans-serif; fill: #0f172a; }
+    .bar { font: 700 12px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #ffffff; }
+    .alt { font: 600 12.5px 'Inter', 'Segoe UI', system-ui, sans-serif; }
+    .tick { stroke: #94a3b8; stroke-opacity: 0.45; stroke-width: 1; stroke-dasharray: 3 4; }
   </style>
   <defs>
     <marker id="gt-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
@@ -14,50 +15,64 @@
     </marker>
   </defs>
 
-  <!-- Phase bands -->
-  <rect x="50" y="20" width="286" height="34" rx="8" fill="rgba(37,99,235,0.10)"/>
-  <text x="193" y="42" text-anchor="middle" class="ph" fill="#1d4ed8">DETECTION &amp; ANALYSIS</text>
-  <rect x="340" y="20" width="425" height="34" rx="8" fill="rgba(234,88,12,0.10)"/>
-  <text x="552" y="42" text-anchor="middle" class="ph" fill="#c2410c">RESPONSE</text>
-  <rect x="769" y="20" width="139" height="34" rx="8" fill="rgba(124,58,237,0.10)"/>
-  <text x="838" y="42" text-anchor="middle" class="ph" fill="#6d28d9">POST-INCIDENT</text>
-
-  <!-- Axis -->
-  <line x1="24" y1="120" x2="944" y2="120" stroke="#94a3b8" stroke-width="2" marker-end="url(#gt-arrow)"/>
+  <!-- Guides from each gate down through the metric rows -->
+  <g class="tick">
+    <line x1="60" y1="120" x2="60" y2="290"/><line x1="182" y1="120" x2="182" y2="290"/>
+    <line x1="304" y1="120" x2="304" y2="290"/><line x1="426" y1="120" x2="426" y2="290"/>
+    <line x1="548" y1="120" x2="548" y2="290"/><line x1="670" y1="120" x2="670" y2="290"/>
+    <line x1="792" y1="120" x2="792" y2="290"/><line x1="914" y1="120" x2="914" y2="290"/>
+  </g>
 
   <!-- Phases between gates -->
-  <text x="121" y="100" text-anchor="middle" class="seg">Triage</text>
-  <text x="264" y="100" text-anchor="middle" class="seg">Investigation</text>
-  <text x="407" y="100" text-anchor="middle" class="seg">Containment</text>
-  <text x="550" y="100" text-anchor="middle" class="seg">Eradication</text>
-  <text x="693" y="100" text-anchor="middle" class="seg">Recovery</text>
-  <text x="836" y="100" text-anchor="middle" class="seg">Review</text>
+  <g class="seg" text-anchor="middle">
+    <text x="121" y="34">Detection</text><text x="243" y="34">Triage</text>
+    <text x="365" y="34">Investigation</text><text x="487" y="34">Containment</text>
+    <text x="609" y="34">Eradication</text><text x="731" y="34">Recovery</text>
+    <text x="853" y="34">Lessons learned</text>
+  </g>
 
-  <!-- Gates -->
+  <!-- Axis and gates -->
+  <line x1="30" y1="56" x2="946" y2="56" stroke="#94a3b8" stroke-width="2" marker-end="url(#gt-arrow)"/>
   <g class="g" text-anchor="middle">
-    <circle cx="50" cy="120" r="17" fill="#ffffff" stroke="#2563eb" stroke-width="2"/><text x="50" y="125" fill="#1d4ed8">G1</text>
-    <circle cx="193" cy="120" r="17" fill="#ffffff" stroke="#2563eb" stroke-width="2"/><text x="193" y="125" fill="#1d4ed8">G2</text>
-    <circle cx="336" cy="120" r="17" fill="#ffffff" stroke="#2563eb" stroke-width="2"/><text x="336" y="125" fill="#1d4ed8">G3</text>
-    <circle cx="479" cy="120" r="17" fill="#ffffff" stroke="#ea580c" stroke-width="2"/><text x="479" y="125" fill="#c2410c">G4</text>
-    <circle cx="622" cy="120" r="17" fill="#ffffff" stroke="#ea580c" stroke-width="2"/><text x="622" y="125" fill="#c2410c">G5</text>
-    <circle cx="765" cy="120" r="17" fill="#ffffff" stroke="#ea580c" stroke-width="2"/><text x="765" y="125" fill="#c2410c">G6</text>
-    <circle cx="908" cy="120" r="17" fill="#ffffff" stroke="#7c3aed" stroke-width="2"/><text x="908" y="125" fill="#6d28d9">G7</text>
+    <circle cx="60" cy="56" r="16" fill="#0f172a"/><text x="60" y="60" fill="#ffffff">T0</text>
+    <circle cx="182" cy="56" r="16" fill="#ffffff" stroke="#2563eb" stroke-width="2"/><text x="182" y="60" fill="#1d4ed8">G1</text>
+    <circle cx="304" cy="56" r="16" fill="#ffffff" stroke="#2563eb" stroke-width="2"/><text x="304" y="60" fill="#1d4ed8">G2</text>
+    <circle cx="426" cy="56" r="16" fill="#ffffff" stroke="#2563eb" stroke-width="2"/><text x="426" y="60" fill="#1d4ed8">G3</text>
+    <circle cx="548" cy="56" r="16" fill="#ffffff" stroke="#ea580c" stroke-width="2"/><text x="548" y="60" fill="#c2410c">G4</text>
+    <circle cx="670" cy="56" r="16" fill="#ffffff" stroke="#ea580c" stroke-width="2"/><text x="670" y="60" fill="#c2410c">G5</text>
+    <circle cx="792" cy="56" r="16" fill="#ffffff" stroke="#ea580c" stroke-width="2"/><text x="792" y="60" fill="#c2410c">G6</text>
+    <circle cx="914" cy="56" r="16" fill="#ffffff" stroke="#2563eb" stroke-width="2"/><text x="914" y="60" fill="#1d4ed8">G7</text>
   </g>
   <g class="gl" text-anchor="middle">
-    <text x="50" y="160">Received</text>
-    <text x="193" y="160">Triage</text><text x="193" y="176">disposition</text>
-    <text x="336" y="160">Incident</text><text x="336" y="176">declared</text>
-    <text x="479" y="160">First</text><text x="479" y="176">containment</text>
-    <text x="622" y="160">Eradication</text><text x="622" y="176">verified</text>
-    <text x="765" y="160">Recovery</text><text x="765" y="176">complete</text>
-    <text x="908" y="160">Case</text><text x="908" y="176">closed</text>
+    <text x="60" y="94">First malicious</text><text x="60" y="110">event</text>
+    <text x="182" y="94">Alert(s)</text><text x="182" y="110">received</text>
+    <text x="304" y="94">Triage</text><text x="304" y="110">disposition</text>
+    <text x="426" y="94">Incident</text><text x="426" y="110">declared</text>
+    <text x="548" y="94">First</text><text x="548" y="110">containment</text>
+    <text x="670" y="94">Eradication</text><text x="670" y="110">verified</text>
+    <text x="792" y="94">Recovery</text><text x="792" y="110">complete</text>
+    <text x="914" y="94">Case</text><text x="914" y="110">closed</text>
   </g>
 
-  <!-- Open questions -->
-  <path d="M193 214 v10 H336 v-10" fill="none" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="5 4"/>
-  <text x="264" y="248" text-anchor="middle" class="qq" fill="#c2410c">Early containment for</text>
-  <text x="264" y="266" text-anchor="middle" class="qq" fill="#c2410c">High and Critical Cases?</text>
-  <path d="M622 214 v10 H908 v-10" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 4"/>
-  <text x="765" y="248" text-anchor="middle" class="qq" fill="#6d28d9">Does MTTR stop at</text>
-  <text x="765" y="266" text-anchor="middle" class="qq" fill="#6d28d9">G5, G6 or G7?</text>
+  <!-- MTTD: T0 to G1 -->
+  <rect x="62" y="136" width="118" height="28" rx="6" fill="#1e3a8a"/>
+  <text x="72" y="155" class="bar">MTTD</text>
+
+  <!-- MTTI: G1 to G2, or to G3 -->
+  <rect x="184" y="174" width="118" height="28" rx="6" fill="#2563eb"/>
+  <text x="194" y="193" class="bar">MTTI</text>
+  <rect x="307" y="175" width="116" height="26" rx="6" fill="#eef4ff" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="317" y="193" class="alt" fill="#1d4ed8">or to G3</text>
+
+  <!-- MTTC: G1 to G4, or from T0? -->
+  <rect x="63" y="213" width="116" height="26" rx="6" fill="#f3eefe" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="73" y="231" class="alt" fill="#6d28d9">or from T0?</text>
+  <rect x="184" y="212" width="362" height="28" rx="6" fill="#7c3aed"/>
+  <text x="194" y="231" class="bar">MTTC</text>
+
+  <!-- MTTR: G1 to G4, or to G5, or to G6? -->
+  <rect x="184" y="250" width="362" height="28" rx="6" fill="#ea580c"/>
+  <text x="194" y="269" class="bar">MTTR</text>
+  <rect x="551" y="251" width="238" height="26" rx="6" fill="#fdf1ea" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="561" y="269" class="alt" fill="#c2410c">or to G5, or to G6?</text>
 </svg>
