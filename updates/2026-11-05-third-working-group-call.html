@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Third Working Group call — ZeroSOC.org</title>
-  <meta name="description" content="Recap of the third ZeroSOC Working Group call on 5 November 2026: OCSF UID 984, community governance, a proposed verdict structure for near-misses and incidents, where MTTR stops, and a live platform demo.">
+  <meta name="description" content="Recap of the third ZeroSOC Working Group call on 5 November 2026: a proposed verdict structure for near-misses and incidents, the gates of a Case and where MTTR stops.">
 
   <!-- Open Graph / Meta -->
   <meta property="og:type" content="article">
   <meta property="og:title" content="Third Working Group call — ZeroSOC.org">
-  <meta property="og:description" content="Recap of the third ZeroSOC Working Group call on 5 November 2026: OCSF UID 984, community governance, a proposed verdict structure for near-misses and incidents, where MTTR stops, and a live platform demo.">
+  <meta property="og:description" content="Recap of the third ZeroSOC Working Group call on 5 November 2026: a proposed verdict structure for near-misses and incidents, the gates of a Case and where MTTR stops.">
   <meta property="og:url" content="https://zerosoc.org/updates/2026-11-05-third-working-group-call.html">
 
   <!-- Favicon -->
@@ -79,45 +79,25 @@
             <time datetime="2026-11-05">5 November 2026</time>
             <span class="tag blue">Working Group</span>
           </div>
-          <h1>Third Working Group call: verdicts, governance and when an incident ends</h1>
+          <h1>Third Working Group call: verdicts, gates and governance</h1>
           <p class="post-lede">
-            The ZeroSOC Working Group met online on Thursday 5 November for its third call, with two members joining
-            for the first time. We covered the OCSF extension, how the project will be governed, where a near-miss
-            ends and an incident begins, and when response time should stop counting. We closed with a live demo.
+            The ZeroSOC Working Group met online on 5 November for its third call. Here are the main topics and where
+            we need your input.
           </p>
         </header>
 
         <div class="post-body">
           <h2>OCSF reserved UID 984 for ZeroSOC</h2>
           <p>
-            Our request was merged into the official OCSF registry, so UID 984 now belongs to the ZeroSOC extension.
-            The extension adds a field only where OCSF has no concept of its own, and Cases are correlated through
-            OCSF's <code>correlation_uid</code>. Staying close to the public schema also pays off for AI agents:
-            a model that already knows OCSF can read ZeroSOC records without extra prompting.
-          </p>
-
-          <h2>From one maintainer to community governance</h2>
-          <p>The project is moving to an open, community-governed model. The proposed rules for changes:</p>
-          <ul>
-            <li><strong>Everyday changes</strong> (editorial fixes, drafts, edits to development documents) can be
-              merged by a maintainer once the automated checks are green.</li>
-            <li><strong>Decisions</strong> (design decisions on development or stable documents, governance changes)
-              start with an issue, then a pull request that stays open for 72 hours with every objection
-              addressed.</li>
-            <li><strong>Promotion to stable</strong>, when a document becomes binding for conformance, needs maturity
-              checks and a review by someone other than the author.</li>
-          </ul>
-          <p>
-            We are looking for maintainers: people who review pull requests, help settle disagreements and cut
-            releases. If you would like to take this on, tell us on Slack.
+            OCSF has reserved UID 984 for the ZeroSOC extension. The extension adds fields only where OCSF has no
+            concept of its own.
           </p>
 
           <h2>Near-miss or incident?</h2>
           <p>
-            The group discussed a single threshold question: <em>did the malicious activity reach the
-            environment?</em> If it did and can cause harm, it is an Incident and needs a response. If it was stopped
-            before, at a mail or web gateway or inside a sandbox, it is a Near-miss: the Case closes without
-            remediation and stays on record. Both carry the True Positive verdict; severity tells them apart.
+            The group discussed one threshold question: <em>did the malicious activity reach the environment?</em>
+            If it did, it is an Incident and needs a response. If it was stopped before, it is a Near-miss: the Case
+            closes without remediation and stays on record.
           </p>
 
           <figure class="post-figure">
@@ -215,67 +195,111 @@
           </figure>
 
           <p>
-            One participant proposed giving False Positives and Benign Positives <code>severity_id</code> 1 as well,
-            and keeping 2 to 5 for Incidents only. An automated triage then has one simple rule: anything above
-            Informational is a real incident. We also want a decision matrix that draws the boundaries between
-            near-miss, impact and benign activity more formally.
+            A further proposal gives False Positives and Benign Positives <code>severity_id</code> 1 as well, keeping
+            2 to 5 for Incidents only.
           </p>
 
-          <h2>Early containment and where MTTR stops</h2>
+          <h2>Gates, early containment and MTTR</h2>
           <p>
-            Should High and Critical Cases allow containment before the Incident is declared, while the investigation
-            is still testing its hypotheses? The idea on the table is bounded: only pre-authorised, reversible actions,
-            such as a conditional access change or isolating a device, instead of waiting for the formal declaration.
-          </p>
-          <p>We then walked through the seven operational gates of a Case:</p>
-          <ul class="gate-strip" aria-label="Operational gates">
-            <li>G1 Received</li>
-            <li>G2 Triage disposition</li>
-            <li>G3 Incident declared</li>
-            <li>G4 First containment</li>
-            <li class="gate-open">G5 Eradication verified</li>
-            <li class="gate-open">G6 Recovery complete</li>
-            <li class="gate-open">G7 Case closed</li>
-          </ul>
-          <p>
-            The open question is where Mean Time to Respond stops: at G5 when the threat is eradicated, at G6 when
-            services are restored and containment is lifted, or at G7 when the Case closes after the post-incident
-            review. The industry has no shared definition of MTTD, triage time or MTTR, which is why published
-            figures are so hard to compare.
+            We reviewed seven proposed gates that mark a Case's progress from the alert to its closure, and two open
+            questions around them.
           </p>
 
-          <h2>Live demo of the reference platform</h2>
+          <figure class="post-figure">
+            <svg viewBox="0 0 960 290" role="img" aria-labelledby="gt-title gt-desc">
+              <title id="gt-title">Proposed operational gates of a Case</title>
+              <desc id="gt-desc">Timeline of seven gates. Detection and Analysis: triage runs from G1 Received to G2 Triage disposition, investigation from G2 to G3 Incident declared. Response: containment runs from G3 to G4 First containment, eradication from G4 to G5 Eradication verified, recovery from G5 to G6 Recovery complete. Post-incident: the review runs from G6 to G7 Case closed. Two open questions: early containment for High and Critical Cases between G2 and G3, and whether MTTR stops at G5, G6 or G7.</desc>
+              <style>
+                .ph { font: 600 13px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; letter-spacing: 0.06em; }
+                .seg { font: 600 14px 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; fill: #334155; }
+                .g { font: 700 13px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; }
+                .gl { font: 500 13px 'Inter', 'Segoe UI', system-ui, sans-serif; fill: #0f172a; }
+                .qq { font: 600 13px 'Inter', 'Segoe UI', system-ui, sans-serif; }
+              </style>
+              <defs>
+                <marker id="gt-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#94a3b8"/>
+                </marker>
+              </defs>
+
+              <!-- Phase bands -->
+              <rect x="50" y="20" width="286" height="34" rx="8" fill="rgba(37,99,235,0.10)"/>
+              <text x="193" y="42" text-anchor="middle" class="ph" fill="#1d4ed8">DETECTION &amp; ANALYSIS</text>
+              <rect x="340" y="20" width="425" height="34" rx="8" fill="rgba(234,88,12,0.10)"/>
+              <text x="552" y="42" text-anchor="middle" class="ph" fill="#c2410c">RESPONSE</text>
+              <rect x="769" y="20" width="139" height="34" rx="8" fill="rgba(124,58,237,0.10)"/>
+              <text x="838" y="42" text-anchor="middle" class="ph" fill="#6d28d9">POST-INCIDENT</text>
+
+              <!-- Axis -->
+              <line x1="24" y1="120" x2="944" y2="120" stroke="#94a3b8" stroke-width="2" marker-end="url(#gt-arrow)"/>
+
+              <!-- Phases between gates -->
+              <text x="121" y="100" text-anchor="middle" class="seg">Triage</text>
+              <text x="264" y="100" text-anchor="middle" class="seg">Investigation</text>
+              <text x="407" y="100" text-anchor="middle" class="seg">Containment</text>
+              <text x="550" y="100" text-anchor="middle" class="seg">Eradication</text>
+              <text x="693" y="100" text-anchor="middle" class="seg">Recovery</text>
+              <text x="836" y="100" text-anchor="middle" class="seg">Review</text>
+
+              <!-- Gates -->
+              <g class="g" text-anchor="middle">
+                <circle cx="50" cy="120" r="17" fill="#ffffff" stroke="#2563eb" stroke-width="2"/><text x="50" y="125" fill="#1d4ed8">G1</text>
+                <circle cx="193" cy="120" r="17" fill="#ffffff" stroke="#2563eb" stroke-width="2"/><text x="193" y="125" fill="#1d4ed8">G2</text>
+                <circle cx="336" cy="120" r="17" fill="#ffffff" stroke="#2563eb" stroke-width="2"/><text x="336" y="125" fill="#1d4ed8">G3</text>
+                <circle cx="479" cy="120" r="17" fill="#ffffff" stroke="#ea580c" stroke-width="2"/><text x="479" y="125" fill="#c2410c">G4</text>
+                <circle cx="622" cy="120" r="17" fill="#ffffff" stroke="#ea580c" stroke-width="2"/><text x="622" y="125" fill="#c2410c">G5</text>
+                <circle cx="765" cy="120" r="17" fill="#ffffff" stroke="#ea580c" stroke-width="2"/><text x="765" y="125" fill="#c2410c">G6</text>
+                <circle cx="908" cy="120" r="17" fill="#ffffff" stroke="#7c3aed" stroke-width="2"/><text x="908" y="125" fill="#6d28d9">G7</text>
+              </g>
+              <g class="gl" text-anchor="middle">
+                <text x="50" y="160">Received</text>
+                <text x="193" y="160">Triage</text><text x="193" y="176">disposition</text>
+                <text x="336" y="160">Incident</text><text x="336" y="176">declared</text>
+                <text x="479" y="160">First</text><text x="479" y="176">containment</text>
+                <text x="622" y="160">Eradication</text><text x="622" y="176">verified</text>
+                <text x="765" y="160">Recovery</text><text x="765" y="176">complete</text>
+                <text x="908" y="160">Case</text><text x="908" y="176">closed</text>
+              </g>
+
+              <!-- Open questions -->
+              <path d="M193 214 v10 H336 v-10" fill="none" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <text x="264" y="248" text-anchor="middle" class="qq" fill="#c2410c">Early containment for</text>
+              <text x="264" y="266" text-anchor="middle" class="qq" fill="#c2410c">High and Critical Cases?</text>
+              <path d="M622 214 v10 H908 v-10" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 4"/>
+              <text x="765" y="248" text-anchor="middle" class="qq" fill="#6d28d9">Does MTTR stop at</text>
+              <text x="765" y="266" text-anchor="middle" class="qq" fill="#6d28d9">G5, G6 or G7?</text>
+            </svg>
+            <figcaption>
+              Proposed operational gates, with the phases between them. The MTTR stop point is discussed on
+              <a href="https://github.com/ZeroSOC/zerosoc-framework/issues/85" target="_blank" rel="noopener noreferrer">issue #85</a>.
+            </figcaption>
+          </figure>
+
           <p>
-            We closed with an end-to-end run of the open-source reference platform on Azure. It orchestrates its
-            workflows with LangGraph and calls models through Azure AI Foundry, held in place by deterministic playbook
-            guardrails. It is built in layers: the framework specifications, the agent skills, the MCP servers and the
-            execution engine. Attacks are simulated in a cyber range on Azure VMs with Caldera and Atomic Red Team.
+            Should High and Critical Cases allow bounded, reversible containment before the Incident is declared? And
+            where should Mean Time to Respond stop: when the threat is eradicated, when services are restored, or when
+            the Case is closed?
           </p>
+
+          <h2>Governance and demo</h2>
           <p>
-            An Atomic Red Team scenario (a phishing macro launching PowerShell and further binaries) ran on a VM
-            monitored by Microsoft Defender. ZeroSOC picked up the Defender alert, finished triage within a minute,
-            correlated across the process trees within two, proposed isolating the device and posted the alert to
-            Microsoft Teams. When new evidence arrived, it re-evaluated the Case, updated the verdict and kept the
-            full audit trail.
-          </p>
-          <p>
-            The <a href="https://github.com/ZeroSOC/zerosoc-mcp" target="_blank" rel="noopener noreferrer">MCP servers</a>
-            and <a href="https://github.com/ZeroSOC/zerosoc-skills" target="_blank" rel="noopener noreferrer">agent skills</a>
-            are already public. Active members who want to look at the platform code can ask for access.
+            The project is moving from a single maintainer to community governance, and we are looking for
+            maintainers. We closed with a live demo of the reference platform handling a simulated phishing attack
+            detected by Microsoft Defender.
           </p>
 
           <section class="post-callout" aria-labelledby="next-steps">
             <h2 id="next-steps">How to take part</h2>
             <ul>
-              <li>Comment on the near-miss proposal and the severity mapping in
+              <li>Not in the group yet? Email
+                <a href="mailto:marco@zerosoc.org?subject=Joining%20the%20ZeroSOC%20Working%20Group">marco@zerosoc.org</a>
+                with a few lines about your experience.</li>
+              <li>Comment on the verdict structure in
                 <a href="https://github.com/ZeroSOC/zerosoc-framework/issues/3" target="_blank" rel="noopener noreferrer">issue #3</a>
                 by Tuesday 10 November.</li>
               <li>Tell us where MTTR should stop in
                 <a href="https://github.com/ZeroSOC/zerosoc-framework/issues/85" target="_blank" rel="noopener noreferrer">issue #85</a>.</li>
-              <li>Volunteer as a maintainer or reviewer on the Working Group Slack.</li>
-              <li>Not in the group yet? Email
-                <a href="mailto:marco@zerosoc.org?subject=Joining%20the%20ZeroSOC%20Working%20Group">marco@zerosoc.org</a>
-                with a few lines about your experience.</li>
+              <li>Volunteer as a maintainer on the Working Group Slack.</li>
             </ul>
           </section>
         </div>

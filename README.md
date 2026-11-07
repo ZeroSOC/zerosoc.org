@@ -29,6 +29,7 @@ zerosoc.org/
 │   ├── pipeline-explorer.js     # Interactive state switcher for Lifecycle Phases & G1-G5 Gates
 │   └── main.js                  # Navigation scrolling, mobile menu, FAQ accordion logic
 ├── assets/
+│   ├── gates_timeline.svg       # Gates timeline diagram (inlined in the 2026-11-05 post)
 │   ├── verdict_structure.svg    # Verdict structure diagram (inlined in the 2026-11-05 post)
 │   ├── zerosoc_logo.png         # Official ZeroSOC brand logo
 │   ├── favicon.svg              # Vector SVG favicon
