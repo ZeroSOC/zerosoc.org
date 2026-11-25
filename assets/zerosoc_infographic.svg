@@ -41,11 +41,11 @@
     </defs>
 
     <style>
-        .title { font-family: 'Inter', -apple-system, sans-serif; font-size: 42px; font-weight: 800; fill: #f8fafc; letter-spacing: 0.5px; }
-        .subtitle { font-family: 'Inter', -apple-system, sans-serif; font-size: 20px; font-weight: 400; fill: #94a3b8; }
-        .box-title { font-family: 'Inter', -apple-system, sans-serif; font-size: 22px; font-weight: 700; fill: #ffffff; }
-        .box-text { font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; font-weight: 400; fill: #e2e8f0; }
-        .small-text { font-family: 'Inter', -apple-system, sans-serif; font-size: 13px; font-weight: 400; fill: #cbd5e1; }
+        .title { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 42px; font-weight: 800; fill: #f8fafc; letter-spacing: 0.5px; }
+        .subtitle { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 20px; font-weight: 400; fill: #94a3b8; }
+        .box-title { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #ffffff; }
+        .box-text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 400; fill: #e2e8f0; }
+        .small-text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 400; fill: #cbd5e1; }
         .arrow { stroke: #64748b; stroke-width: 3; fill: none; }
         .dashed { stroke-dasharray: 6 4; }
     </style>

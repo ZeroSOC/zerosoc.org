@@ -2,14 +2,14 @@
   <title id="vs-title">Proposed verdict structure for a closed Case</title>
   <desc id="vs-desc">Decision tree. Was the activity malicious? If not, and the rule did not work as designed, the Case is a False Positive (verdict_id 1). If not, and the rule worked as designed, it is a Benign Positive (verdict_id 5). If it was malicious, the verdict is True Positive (verdict_id 2), and the question is whether it reached the environment: if not, it is a Near-miss with severity_id 1, closed and tracked; if it did, it is an Incident with severity_id 2 to 5 and needs a response. The proposal gives False Positives and Benign Positives severity_id 1 too.</desc>
   <style>
-    .q { font: 600 16px 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; fill: #0f172a; }
-    .t { font: 700 17px 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; }
-    .m { font: 500 13px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #0f172a; }
-    .mm { font: 500 12px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #64748b; }
-    .b { font: 400 13px 'Inter', 'Segoe UI', system-ui, sans-serif; fill: #334155; }
-    .a { font: 600 13px 'Inter', 'Segoe UI', system-ui, sans-serif; }
-    .lbl { font: 600 12px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #64748b; }
-    .grp { font: 600 11px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #2563eb; letter-spacing: 0.06em; }
+    .q { font: 600 16px 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', system-ui, sans-serif; fill: #0f172a; }
+    .t { font: 700 17px 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', system-ui, sans-serif; }
+    .m { font: 500 13px ui-monospace, Menlo, Consolas, monospace; fill: #0f172a; }
+    .mm { font: 500 12px ui-monospace, Menlo, Consolas, monospace; fill: #64748b; }
+    .b { font: 400 13px 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', system-ui, sans-serif; fill: #334155; }
+    .a { font: 600 13px 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', system-ui, sans-serif; }
+    .lbl { font: 600 12px ui-monospace, Menlo, Consolas, monospace; fill: #64748b; }
+    .grp { font: 600 11px ui-monospace, Menlo, Consolas, monospace; fill: #2563eb; letter-spacing: 0.06em; }
     .ln { fill: none; stroke: #94a3b8; stroke-width: 1.5; }
   </style>
 

@@ -2,11 +2,11 @@
   <title id="gt-title">Proposed gates of a Case and the metrics they anchor</title>
   <desc id="gt-desc">Timeline from T0, the first malicious event, through G1 Alerts received, G2 Triage disposition, G3 Incident declared, G4 First containment, G5 Eradication verified, G6 Recovery complete and G7 Case closed. The phases between them are detection, triage, investigation, containment, eradication, recovery and lessons learned. MTTD runs from T0 to G1. MTTI runs from G1 to G3, or to G2 when triage closes the Case as False Positive, Benign Positive or Duplicate. MTTC runs from G1 to G4; whether it should start at T0 instead is open. MTTR starts at G1 and stops at G4, G5 or G6; which one is open.</desc>
   <style>
-    .seg { font: 600 14px 'Space Grotesk', 'Segoe UI', system-ui, sans-serif; fill: #475569; font-style: italic; }
-    .g { font: 700 12px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; }
-    .gl { font: 500 12.5px 'Inter', 'Segoe UI', system-ui, sans-serif; fill: #0f172a; }
-    .bar { font: 700 12px 'Fira Code', ui-monospace, Menlo, Consolas, monospace; fill: #ffffff; }
-    .alt { font: 600 12.5px 'Inter', 'Segoe UI', system-ui, sans-serif; }
+    .seg { font: 600 14px 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', system-ui, sans-serif; fill: #475569; font-style: italic; }
+    .g { font: 700 12px ui-monospace, Menlo, Consolas, monospace; }
+    .gl { font: 500 12.5px 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', system-ui, sans-serif; fill: #0f172a; }
+    .bar { font: 700 12px ui-monospace, Menlo, Consolas, monospace; fill: #ffffff; }
+    .alt { font: 600 12.5px 'Helvetica Neue', Helvetica, Arial, 'Segoe UI', system-ui, sans-serif; }
     .tick { stroke: #94a3b8; stroke-opacity: 0.45; stroke-width: 1; stroke-dasharray: 3 4; }
   </style>
   <defs>

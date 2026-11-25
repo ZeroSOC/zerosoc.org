@@ -55,7 +55,7 @@
 }
 
 .brand-badge {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.65rem;
   font-weight: 600;
   padding: 0.15rem 0.45rem;
@@ -112,7 +112,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-family: var(--font-sans);
+  font-family: var(--font-label);
   font-size: 0.95rem;
   font-weight: 600;
   padding: 0.65rem 1.35rem;
@@ -173,7 +173,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.72rem;
   font-weight: 500;
   padding: 0.2rem 0.55rem;
@@ -370,7 +370,7 @@
 }
 
 .node-phase-tag {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.68rem;
   font-weight: 600;
   color: var(--blue-primary);
@@ -392,7 +392,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.7rem;
   font-weight: 600;
   background: var(--orange-soft);
@@ -439,7 +439,7 @@
 }
 
 .inspector-block h5 {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.72rem;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -595,7 +595,7 @@
 }
 
 .roadmap-link {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--blue-primary);
@@ -709,7 +709,7 @@
 }
 
 .standards-heading {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -727,7 +727,7 @@
 }
 
 .standards-pill {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.35rem 0.85rem;
@@ -756,7 +756,7 @@
 }
 
 .footer-col h5 {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -832,7 +832,7 @@
 }
 
 .whys-kicker {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -874,7 +874,7 @@
 }
 
 .ecosystem-flow-title {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -911,7 +911,7 @@
 }
 
 .flow-step-num {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.68rem;
   font-weight: 700;
   color: var(--blue-primary);
@@ -930,7 +930,7 @@
 .flow-step-role {
   font-size: 0.78rem;
   color: var(--ink-muted);
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
 }
 
 .flow-step-arrow {
@@ -982,7 +982,7 @@
 }
 
 .workstream-title {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--ink-heading);
@@ -1032,7 +1032,7 @@
 }
 
 .infographic-caption {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.75rem;
   color: #94a3b8;
   text-align: center;
@@ -1142,7 +1142,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--orange-primary);
@@ -1217,7 +1217,7 @@
 }
 
 .cta-channel-badge span {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.75rem;
   color: var(--blue-primary);
   background: var(--blue-soft);
@@ -1364,7 +1364,7 @@
 }
 
 .workstream-status-note {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.72rem;
   color: var(--ink-light);
 }
@@ -1407,7 +1407,7 @@
 
 .flow-step-status {
   margin-top: 0.4rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.64rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;

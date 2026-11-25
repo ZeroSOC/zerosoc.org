@@ -50,7 +50,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.6rem;
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.75rem;
   color: var(--ink-muted);
   letter-spacing: 0.04em;
@@ -159,7 +159,7 @@
 
 .gate-strip li {
   margin: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.75rem;
   padding: 0.3rem 0.65rem;
   border: 1px solid var(--glass-border);

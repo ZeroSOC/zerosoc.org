@@ -4,8 +4,6 @@
  * License: Apache-2.0
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap');
-
 :root {
   /* Canvas & Grid */
   --bg-paper: #f2f5fa;
@@ -50,10 +48,13 @@
   --glass-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.95);
   --glass-shadow-hover: 0 18px 36px -6px rgba(37, 99, 235, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1);
 
-  /* Typography Stacks */
-  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
-  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  /* Typography Stacks: standard fonts only, nothing to download.
+     Headings and labels in Helvetica (Arial on Windows), reading text in Georgia,
+     monospace only for code and repository names. Android and Linux get the stand-ins. */
+  --font-display: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif;
+  --font-label: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', sans-serif;
+  --font-text: Georgia, 'Noto Serif', 'DejaVu Serif', serif;
+  --font-mono: ui-monospace, Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
   /* Layout Constants */
   --max-width: 1200px;

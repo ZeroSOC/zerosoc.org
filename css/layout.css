@@ -23,7 +23,7 @@ body {
     radial-gradient(circle at 15% 85%, rgba(234, 88, 12, 0.05), transparent 45%);
   background-size: var(--grid-size) var(--grid-size), var(--grid-size) var(--grid-size), 100% 100%, 100% 100%;
   color: var(--ink-body);
-  font-family: var(--font-sans);
+  font-family: var(--font-text);
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
@@ -68,7 +68,7 @@ body {
   position: fixed;
   bottom: 18px;
   right: 24px;
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.65rem;
   color: var(--ink-muted);
   letter-spacing: 0.12em;
@@ -159,7 +159,7 @@ a:hover {
 
 /* Kicker Badge */
 .kicker {
-  font-family: var(--font-mono);
+  font-family: var(--font-label);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
